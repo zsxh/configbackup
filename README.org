@@ -12,9 +12,9 @@
   #+END_QUOTE
 
 * Anaconda 源设置
- #+BEGIN_QUOTE
-  ~/.condarc
- #+END_QUOTE 
+  #+BEGIN_QUOTE
+    ~/.condarc
+  #+END_QUOTE 
 
 * Vim
   #+BEGIN_QUOTE

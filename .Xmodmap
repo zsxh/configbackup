@@ -1,4 +1,5 @@
 ! 将 Control_L 和 Super_L 互换，将 Alt_R 设置为 Esc
+! 每次g挨冻后，记得将 fcitx 设置里的 全局配置/额外的激活输入法快捷键 -- 禁用
 
 !shift       Shift_L (0x32),  Shift_R (0x3e)
 !lock        Caps_Lock (0x42)
