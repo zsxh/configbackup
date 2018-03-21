@@ -117,6 +117,13 @@ if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm* ) && -f /etc
 else
     eval $(dircolors)
 fi
+#alias for cnpm 
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
 
 # added by Anaconda3 installer
-export PATH="/home/chen/software/anaconda3/bin:$PATH"
+export PATH="/home/zsxh/software/anaconda3/bin:$PATH"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"

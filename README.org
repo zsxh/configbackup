@@ -1,0 +1,33 @@
+*[Update: 2018-03-21]*
+
+* Spacemacs
+  #+BEGIN_QUOTE
+    ~/.spacemacs
+  #+END_QUOTE
+
+* Xmodmap 
+  #+BEGIN_QUOTE
+    改键映射
+    ~/.Xmodmap
+  #+END_QUOTE
+
+* Anaconda 源设置
+ #+BEGIN_QUOTE
+  ~/.condarc
+ #+END_QUOTE 
+
+* Vim
+  #+BEGIN_QUOTE
+    ~/.vimrc
+  #+END_QUOTE
+
+* Inputrc
+  #+BEGIN_QUOTE
+    ~/.inputrc
+  #+END_QUOTE
+
+* Deepin 其它环境变量
+  #+BEGIN_QUOTE
+    ~/.bashrc
+    ~/.zshrc
+  #+END_QUOTE

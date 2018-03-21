@@ -1,0 +1,25 @@
+! 将 Control_L 和 Super_L 互换，将 Alt_R 设置为 Esc
+
+!shift       Shift_L (0x32),  Shift_R (0x3e)
+!lock        Caps_Lock (0x42)
+!control     Control_L (0x25),  Control_R (0x69)
+!mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+!mod2        Num_Lock (0x4d)
+!mod3      
+!mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+!mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+
+clear mod4
+clear control
+
+!keycode 133 = Super_L NoSymbol Super_L
+keycode 133 = Control_L NoSymbol Control_L
+
+!keycode  37 = Control_L NoSymbol Control_L
+keycode 37 = Super_L NoSymbol Super_L
+
+!keycode 108 = Alt_R Meta_R Alt_R Meta_R
+keycode 108 = Escape NoSymbol Escape
+
+add control = Control_L Control_R
+add mod4 = Super_L Super_R
