@@ -66,8 +66,8 @@ This function should only modify configuration layer settings."
      ipython-notebook
      java
      html
-     ;; (javascript :variables
-     ;;             javascript-disable-tern-port-files nil)
+     (javascript :variables
+                 javascript-disable-tern-port-files nil)
      yaml
      imenu-list
      pdf-tools
@@ -202,7 +202,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Meslo LG M"
+   dotspacemacs-default-font '("SF Mono"
                                :size 14
                                :weight normal
                                :width normal
@@ -475,10 +475,16 @@ before packages are loaded."
   ;; (setq display-time-day-and-date t)
   (display-time-mode 1)
 
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset (font-spec :family "Noto Sans Mono CJK SC"))
-    (setq face-font-rescale-alist '(("Noto Sans Mono CJK SC" . 1.2))))
+  ;; 中文字体设置
+  ;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+  ;;   (set-fontset-font (frame-parameter nil 'font)
+  ;;                     charset (font-spec :family "Noto Sans Mono CJK SC"))
+  ;;   (setq face-font-rescale-alist '(("Noto Sans Mono CJK SC" . 1.2))))
+
+  ;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+  ;;   (set-fontset-font (frame-parameter nil 'font)
+  ;;                     charset (font-spec :family "WenQuanYi Micro Hei Mono" :size 16))
+  ;;   (setq face-font-rescale-alist '(("WenQuanYi Micro Hei Mono" . (/ 16 13)))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -495,11 +501,12 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-brain groovy-mode ensime helm magit yasnippet yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode volatile-highlights vi-tilde-fringe uuidgen use-package twilight-bright-theme treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spaceline-all-the-icons smex smeargle slim-mode shell-pop scss-mode scala-mode sbt-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pipenv pip-requirements persp-mode pdf-tools pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file ob-ipython nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint less-css-mode ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic impatient-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make helm-core groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit ghub gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav ein editorconfig dumb-jump diminish define-word cython-mode csv-mode counsel-projectile counsel-css company-web company-statistics company-quickhelp company-emacs-eclim company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile apropospriate-theme aggressive-indent adaptive-wrap ace-link ac-ispell))))
+    (dumb-jump yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package twilight-bright-theme treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spaceline-all-the-icons smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pipenv pip-requirements persp-mode pdf-tools pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic impatient-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein editorconfig diminish define-word cython-mode csv-mode counsel-projectile counsel-css company-web company-tern company-statistics company-quickhelp company-emacs-eclim company-anaconda column-enforce-mode coffee-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile apropospriate-theme aggressive-indent adaptive-wrap ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-table ((t (:foreground "#6c71c4" :family "Ubuntu Mono"))))
  )
 )
