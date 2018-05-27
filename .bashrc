@@ -124,6 +124,18 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 # added by Anaconda3 installer
-export PATH="/home/zsxh/software/anaconda3/bin:$PATH"
+# export PATH="/home/zsxh/software/anaconda3/bin:$PATH"
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
+export PYENV_ROOT="$HOME/.pyenv"
+export PYTHONUSERBASE="$HOME/.local"
+export PATH="$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$PATH"
+
+# autoenv
+source ~/.autoenv/activate.sh
+
+# 放在最后防止环境变量改变引起其他问题
+eval "$(pipenv --completion)"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi

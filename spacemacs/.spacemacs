@@ -51,7 +51,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      markdown
-     ;; neotree
+     neotree
+     ;; treemacs
      org
      (shell :variables
              shell-default-height 30
@@ -60,7 +61,6 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      ;; version-control
-     treemacs
      ;; lsp
      (python :variables
              python-backend 'anaconda)
@@ -74,6 +74,7 @@ This function should only modify configuration layer settings."
      pdf-tools
      csv
      ibuffer
+     common-lisp
      )
 
    ;; List of additional packages that will be installed without being
@@ -108,6 +109,25 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
+   ;; If non-nil then enable support for the portable dumper. You'll need
+   ;; to compile Emacs 27 from source following the instructions in file
+   ;; EXPERIMENTAL.org at to root of the git repository.
+   ;; (default nil)
+   dotspacemacs-enable-emacs-pdumper nil
+
+   ;; File path pointing to emacs 27.1 executable compiled with support
+   ;; for the portable dumper (this is currently the branch pdumper).
+   ;; (default "emacs")
+   dotspacemacs-emacs-pdumper-executable-file "emacs"
+
+   ;; Name of the Spacemacs dump file. This is the file will be created by the
+   ;; portable dumper in the cache directory under dumps sub-directory.
+   ;; To load it when starting Emacs add the parameter `--dump-file'
+   ;; when invoking Emacs 27.1 executable on the command line, for instance:
+   ;;   ./emacs --dump-file=~/.emacs.d/.cache/dumps/spacemacs.pdmp
+   ;; (default spacemacs.pdmp)
+   dotspacemacs-emacs-dumper-dump-file "spacemacs.pdmp"
+
    ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
    ;; environment, otherwise it is strongly recommended to let it set to t.
@@ -400,7 +420,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-highlight-delimiters 'all
 
    ;; If non-nil, start an Emacs server if one is not already running.
-   dotspacemacs-enable-server t
+   ;; (default nil)
+   dotspacemacs-enable-server nil
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
@@ -466,6 +487,13 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         )
   )
 
+(defun dotspacemacs/user-load ()
+  "Library to load while dumping.
+This function is called while dumping Spacemacs configuration. You can
+`require' or `load' the libraries of your choice that will be included
+in the dump."
+  )
+
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -473,9 +501,10 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+  ;; modeline 时间设置
   ;; mode line time stamp "https://github.com/syl20bnr/spacemacs/issues/9458"
   ;; (setq display-time-24hr-format t)
-  (setq display-time-format "%Y-%m-%d %H:%M 周%w")        ; add seconds
+  (setq display-time-format "%Y-%m-%d %H:%M 周%a")        ; add seconds
   ;; (setq display-time-interval 1)               ; update every second
   (setq display-time-default-load-average nil) ; don't show load average
   ;; (setq display-time-day-and-date t)
@@ -492,22 +521,9 @@ before packages are loaded."
   ;;                     charset (font-spec :family "WenQuanYi Micro Hei Mono" :size 16))
   ;;   (setq face-font-rescale-alist '(("WenQuanYi Micro Hei Mono" . (/ 16 13)))))
 
-  ;; java mode 缩进
-  (add-hook 'java-mode-hook
-            (lambda ()
-              (setq c-basic-offset 2)))
-
-  ;; org latex fragment 跟随buffer字体缩放
-  (defun update-org-latex-fragments ()
-    (org-toggle-latex-fragment '(16))
-    (plist-put org-format-latex-options :scale text-scale-mode-amount)
-    (org-toggle-latex-fragment '(16))
-    )
-  (add-hook 'text-scale-mode-hook 'update-org-latex-fragments)
-
-  ;; org table 字体
-  (custom-set-faces
-   '(org-table ((t (:foreground "#6c71c4" :family "Ubuntu Mono")))))
+  (add-to-list 'load-path "~/.emacs.d/private/myconfig")
+  (require 'my-org)
+  (require 'my-codestyle)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -524,7 +540,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm helm-core ghub yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package twilight-bright-theme treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spaceline-all-the-icons smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pipenv pip-requirements persp-mode pdf-tools pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic impatient-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein editorconfig dumb-jump diminish define-word cython-mode csv-mode counsel-projectile counsel-css company-web company-tern company-statistics company-quickhelp company-emacs-eclim company-anaconda column-enforce-mode coffee-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile apropospriate-theme aggressive-indent adaptive-wrap ace-link ac-ispell))))
+    (evil-matchit ein markdown-mode yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep websocket web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package twilight-bright-theme toc-org tagedit symon string-inflection spaceline-all-the-icons smex smeargle slime-company slim-mode shell-pop scss-mode sass-mode restart-emacs request-deferred rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pippel pipenv pip-requirements persp-mode pdf-tools pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-ipython neotree nameless mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-gitflow lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-navigator json-mode js2-refactor js-doc ivy-xref ivy-rich ivy-purpose ivy-hydra indent-guide importmagic impatient-mode ibuffer-projectile hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav editorconfig dumb-jump diminish define-word cython-mode csv-mode counsel-projectile counsel-css company-web company-tern company-statistics company-quickhelp company-emacs-eclim company-anaconda common-lisp-snippets column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile apropospriate-theme aggressive-indent ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

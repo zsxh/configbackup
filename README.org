@@ -1,17 +1,24 @@
-*[Update: 2018-03-21]*
+*[Update: 2018-05-27]*
 
 * Spacemacs
   #+BEGIN_QUOTE
     ~/.spacemacs
+    ~/.emacs.d/private/myconfig
+  #+END_QUOTE
+
+* Deepin 其它环境变量
+  #+BEGIN_QUOTE
+    ~/.bashrc
+    ~/.zshrc
   #+END_QUOTE
 
 * Xmodmap 
   #+BEGIN_QUOTE
-    改键映射
     ~/.Xmodmap
+    改键映射
   #+END_QUOTE
 
-* Anaconda 源设置
+* conda 源设置
   #+BEGIN_QUOTE
     ~/.condarc
   #+END_QUOTE 
@@ -26,8 +33,8 @@
     ~/.inputrc
   #+END_QUOTE
 
-* Deepin 其它环境变量
+* Python flake8 模块设置
   #+BEGIN_QUOTE
-    ~/.bashrc
-    ~/.zshrc
+    ~/.config/flake8
+    忽略缩进警告
   #+END_QUOTE
