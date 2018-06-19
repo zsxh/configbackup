@@ -1,6 +1,8 @@
 ;; org table 字体
 (custom-set-faces
- '(org-table ((t (:foreground "#6c71c4" :family "Ubuntu Mono")))))
+ '(org-table ((t (:foreground "#6c71c4" :family "Ubuntu Mono"))))
+ '(org-block ((t (:background "#FFFFEA"))))
+ )
 
 ;; org agenda
 (setq org-directory "~/org")
