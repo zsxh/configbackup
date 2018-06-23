@@ -97,27 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # 隐藏user@hostname
 prompt_context() {}
 
-#alias for cnpm 
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
+# #alias for cnpm 
+# # alias cnpm="npm --registry=https://registry.npm.taobao.org \
+# #   --cache=$HOME/.npm/.cache/cnpm \
+# #   --disturl=https://npm.taobao.org/dist \
+# #   --userconfig=$HOME/.cnpmrc"
 
-# added by Anaconda3 installer
-# export PATH="/home/zsxh/software/anaconda3/bin:$PATH"
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
-export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONUSERBASE="$HOME/.local"
-export PATH="$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$PATH"
-
-# autoenv
-source ~/.autoenv/activate.sh
-
-# 放在最后防止环境变量改变引起其他问题
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-if command -v pipenv 1>/dev/null 2>&1; then
-  eval "$(pipenv --completion)"
-fi
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
