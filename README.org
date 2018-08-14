@@ -1,10 +1,7 @@
-*[Update: 2018-06-24]*
+*[Update: 2018-08-14]*
 
-* Spacemacs
-  #+BEGIN_QUOTE
-    ~/.spacemacs
-    ~/.emacs.d/private/myconfig
-  #+END_QUOTE
+* Emacs
+[[https://github.com/zsxh/emacs.d][My Emacs Config]]
 
 * Env 环境变量
   #+BEGIN_QUOTE
@@ -22,6 +19,7 @@
     ~/.pip
     ~/.condarc
     ~/.config/flake8 flake8 忽略缩进警告，调整每行默认长度
+    ~/.config/pycodestyle pycodestyle 忽略缩进警告，调整每行默认长度
   #+END_QUOTE 
 
 * Vim
@@ -32,4 +30,15 @@
 * Inputrc
   #+BEGIN_QUOTE
     ~/.inputrc
+  #+END_QUOTE
+
+* Docker
+  #+BEGIN_QUOTE
+    /etc/systemd/system/docker.service.d/override.conf
+  #+END_QUOTE
+
+* Spacemacs
+  #+BEGIN_QUOTE
+    ~/.spacemacs
+    ~/.emacs.d/private/myconfig
   #+END_QUOTE
