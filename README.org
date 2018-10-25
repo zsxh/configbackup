@@ -1,4 +1,4 @@
-*[Update: 2018-08-14]*
+*[Update: 2018-10-25]*
 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
@@ -9,7 +9,7 @@
     ~/.zshrc
   #+END_QUOTE
 
-* Xmodmap 
+* Xmodmap
   #+BEGIN_QUOTE
     ~/.Xmodmap 键位映射
   #+END_QUOTE
@@ -20,7 +20,7 @@
     ~/.condarc
     ~/.config/flake8 flake8 忽略缩进警告，调整每行默认长度
     ~/.config/pycodestyle pycodestyle 忽略缩进警告，调整每行默认长度
-  #+END_QUOTE 
+  #+END_QUOTE
 
 * Vim
   #+BEGIN_QUOTE
