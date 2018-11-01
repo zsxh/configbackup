@@ -8,8 +8,10 @@ export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
 export JULIA_HOME=/usr/local/julia
+export NODEJS_HOME=/usr/local/nodejs
+export GO_HOME=/usr/local/go
 
-export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH:$JULIA_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8

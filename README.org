@@ -1,5 +1,4 @@
-*[Update: 2018-10-25]*
-
+*Update* <2018-11-01 四> 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
 
@@ -41,4 +40,8 @@
   #+BEGIN_QUOTE
     ~/.spacemacs
     ~/.emacs.d/private/myconfig
+  #+END_QUOTE
+* Rime
+  #+BEGIN_QUOTE
+    ~/.config/ibus/rime/build/default.yaml
   #+END_QUOTE
