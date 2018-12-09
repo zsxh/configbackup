@@ -1,0 +1,6 @@
+Install =zsh=, =prezto= first, then
+#+BEGIN_SRC sh
+  ln -s `pwd`/.myzshenv ~/
+  ln -s `pwd`/.zpreztorc ~
+  echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
+#+END_SRC

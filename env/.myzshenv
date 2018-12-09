@@ -21,12 +21,15 @@ export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
 # 放在最后防止环境变量改变引起其他问题
+# TODO: 放弃pyenv,拖慢zsh启动速度
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-if command -v pipenv 1>/dev/null 2>&1; then
-  eval "$(pipenv --completion)"
-fi
+
+# 造成zsh启动太慢了
+# if command -v pipenv 1>/dev/null 2>&1; then
+#   eval "$(pipenv --completion)"
+# fi
 
 # 触摸板双指水平滑动
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
