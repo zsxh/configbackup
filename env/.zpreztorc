@@ -40,6 +40,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'syntax-highlighting'      \
   'ssh'                      \
+  'autosuggestions'
 
 #
 # Autosuggestions
