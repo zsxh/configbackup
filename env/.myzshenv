@@ -7,11 +7,13 @@ export MAVEN_HOME=/usr/local/maven
 export PYENV_ROOT=$HOME/.pyenv
 export PYTHONUSERBASE=$HOME/.local
 
+export NVM_DIR=$HOME/.nvm
+
 export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
 export JULIA_HOME=/usr/local/julia
-export NODEJS_HOME=/usr/local/nodejs
+# export NODEJS_HOME=/usr/local/nodejs
 export GO_HOME=/usr/local/go
 export RUST_HOME=$HOME/.cargo
 
@@ -34,6 +36,9 @@ fi
 # if command -v pipenv 1>/dev/null 2>&1; then
 #   eval "$(pipenv --completion)"
 # fi
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # 触摸板双指水平滑动
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
