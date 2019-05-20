@@ -1,1 +1,4 @@
 ~/.config/ibus/rime/build/
+
+How To Customization: https://github.com/rime/home/wiki/CustomizationGuide
+hotkey: "Ctrl+`" swtich between english and chinese
