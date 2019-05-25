@@ -29,7 +29,7 @@ export XMODIFIERS=@im=ibus
 # 放在最后防止环境变量改变引起其他问题
 # TODO: 放弃pyenv,拖慢zsh启动速度
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash)"
 fi
 
 # 造成zsh启动太慢了
@@ -37,8 +37,19 @@ fi
 #   eval "$(pipenv --completion)"
 # fi
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Node Version Manager
+# https://github.com/nvm-sh/nvm/issues/1277#issuecomment-470490227
+# The only inconvenience for me is the need to run node, nvm, or npm before any global package (the ones installed with npm install -g <package>), otherwise the command is not recognized.
+nvm_load () {
+    . $NVM_DIR/nvm.sh
+    . $NVM_DIR/bash_completion
+}
+alias node='unalias nvm; unalias node; unalias npm; nvm_load; node $@'
+alias npm='unalias nvm; unalias node; unalias npm; nvm_load; npm $@'
+alias nvm='unalias nvm; unalias node; unalias npm; nvm_load; nvm $@'
 
 # 触摸板双指水平滑动
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
@@ -49,3 +60,25 @@ export TLDR_CACHE_MAX_AGE=720 # hours
 
 # ls -l 用长时间代替短时间格式
 export TIME_STYLE=long-iso
+
+# TMUX
+# https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
+if which tmux >/dev/null 2>&1; then
+    if ! [ "$(basename "$(cat "/proc/$PPID/comm")")" = "emacs" ]; then
+        # if no session is started, start a new session
+        test -z ${TMUX} && (tmux attach || tmux new-session)
+
+        # when quitting tmux, try to attach
+        while test -z ${TMUX}; do
+            tmux attach || break
+        done
+
+        # exit() {
+        #     if [[ -z $TMUX ]]; then
+        #         builtin exit
+        #     else
+        #         tmux detach
+        #     fi
+        # }
+    fi
+fi

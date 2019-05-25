@@ -1,49 +1,60 @@
-*Update* <2019-03-22 五>
+*Update* <2019-05-25 六>
+
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
 
 * Env 环境变量
   Install =zsh=, =prezto= first, then
   #+BEGIN_SRC sh
-    ln -s `pwd`/.myzshenv ~/
-    ln -s `pwd`/.zpreztorc ~
+    ln -s `pwd`/env/.myzshenv ~/
+    ln -s `pwd`/env/.zpreztorc ~/
     echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
   #+END_SRC
 
-* Xmodmap
-  #+BEGIN_QUOTE
-    ~/.Xmodmap 键位映射
-  #+END_QUOTE
+* Xmodmap 键位映射
+  #+BEGIN_SRC sh
+    ln -s `pwd`/.Xmodmap ~/
+  #+END_SRC sh
+
+* Tmux
+  #+begin_src sh
+    ln -s `pwd`/.tmux.conf ~/
+  #+end_src
 
 * Python
-  #+BEGIN_QUOTE
-    ~/.pip
-    ~/.condarc
-    ~/.config/flake8 flake8 忽略缩进警告，调整每行默认长度
-    ~/.config/pycodestyle pycodestyle 忽略缩进警告，调整每行默认长度
-  #+END_QUOTE
+  #+BEGIN_SRC sh
+    # flake8 忽略缩进警告，调整每行默认长度
+    # pycodestyle 忽略缩进警告，调整每行默认长度
+    ln -s `pwd`/python/pip/pip.conf ~/.pip/
+    ln -s `pwd`/python/.condarc ~/
+    ln -s `pwd`/python/flake8 ~/.config
+    ln -s `pwd`/python/pycodestyle ~/.config
+  #+END_SRC
 
 * Vim
-  #+BEGIN_QUOTE
-    ~/.vimrc
-  #+END_QUOTE
+  #+BEGIN_SRC sh
+    ln -s `pwd`/.vimrc ~/
+  #+END_SRC sh
 
 * Inputrc
-  #+BEGIN_QUOTE
-    ~/.inputrc
-  #+END_QUOTE
+  #+BEGIN_SRC sh
+    ln -s `pwd`/.inputrc ~/
+  #+END_SRC
 
 * Docker
-  #+BEGIN_QUOTE
-    /etc/systemd/system/docker.service.d/override.conf
-  #+END_QUOTE
+  #+BEGIN_SRC sh
+    sudo ln -s `pwd`/docker/override.conf /etc/systemd/system/docker.service.d/
+  #+END_SRC
 
-* Spacemacs
+* Rime
+  #+BEGIN_SRC sh
+    ln -s `pwd`/rime/default.yaml ~/.config/ibus/rime/build/
+    ln -s `pwd`/rime/luna_pinyin_simp.schema.yaml ~/.config/ibus/rime/build/
+  #+END_SRC
+
+* Spacemacs(Drop)
   #+BEGIN_QUOTE
     ~/.spacemacs
     ~/.emacs.d/private/myconfig
   #+END_QUOTE
-* Rime
-  #+BEGIN_QUOTE
-    ~/.config/ibus/rime/build/default.yaml
-  #+END_QUOTE
+
