@@ -1,4 +1,4 @@
-*Update* <2019-05-25 六>
+*Update* <2019-05-26 日>
 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
@@ -19,6 +19,12 @@
 * Tmux
   #+begin_src sh
     ln -s `pwd`/.tmux.conf ~/
+  #+end_src
+
+* Terminal
+  Install =alacritty= fisrt
+  #+begin_src sh
+    ln -s `pwd`/alacritty.yml ~/.config/alacritty/
   #+end_src
 
 * Python
