@@ -1,0 +1,5 @@
+#+begin_quote
+Install [[https://github.com/snail007/goproxy][goproxy]]
+#+end_quote
+
+
