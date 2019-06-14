@@ -65,6 +65,10 @@
     ln -s `pwd`/polybar/polybar.desktop ~/.config/autostart
   #+end_src
 
+* Rustfmt
+  #+begin_src sh
+    ln -s `pwd`/rustfmt ~/.config
+  #+end_src
 * Proxy (Optional)
 ** ss
 ** goproxy
