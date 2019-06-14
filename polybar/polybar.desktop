@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Polybar
+GenericName=Polybar
+Comment=A fast and easy-to-use tool for creating status bars
+Exec=/home/zsxh/.config/polybar/launch.sh
+Terminal=false
+Type=Application
+StartupNotify=true
+Hidden=false
