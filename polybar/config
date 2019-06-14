@@ -29,7 +29,7 @@ font-1 = "Noto Sans Mono:size=10;1"
 font-2 = "Noto Sans Symbols:size=10;1"
 font-3 = "Noto Sans Symbols2:size=10;1"
 
-modules-left = date ewmh xwindow
+modules-left = control-center date ewmh xwindow
 modules-center =
 modules-right = github pulseaudio wireless-network cpu memory battery powermenu
 
@@ -73,10 +73,11 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "🗍 "
-format-prefix-foreground = ${colors.foreground-alt}
+; format-prefix = "🗍 "
+; format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #00FFFF
-label = %percentage_used:2%%
+label = 🗍 %percentage_used:2%%
+format = <label>
 
 [module/wireless-network]
 type = internal/network
@@ -193,6 +194,14 @@ menu-0-0 = reboot
 menu-0-0-exec = reboot
 menu-0-1 = power off
 menu-0-1-exec = poweroff
+
+[module/control-center]
+type = custom/text
+content = @
+; content-foreground = #9370DB
+content-underline = #9370DB
+; content-padding = 2
+click-left = dde-control-center -s
 
 [settings]
 screenchange-reload = true
