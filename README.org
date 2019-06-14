@@ -1,4 +1,4 @@
-*Update* <2019-05-27 一>
+*Update* <2019-06-14 星期五>
 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]

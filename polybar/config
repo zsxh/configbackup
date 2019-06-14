@@ -32,7 +32,7 @@ font-3 = "Noto Sans Symbols2:size=10;1"
 modules-left = date ewmh xwindow
 modules-center =
 ; modules-right = github pulseaudio wired-network wireless-network cpu battery
-modules-right = github pulseaudio wireless-network cpu memory battery
+modules-right = github pulseaudio wireless-network cpu memory battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -86,8 +86,8 @@ interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
 
+label-connected = %essid%
 label-disconnected =
 
 ramp-signal-0 = 🌧
@@ -147,7 +147,7 @@ ramp-capacity-foreground = ${colors.foreground-alt}
 
 label-charging = ⚡ %percentage%%
 label-discharging = %percentage%%
-label-full = " ☀ "
+label-full = ☀
 
 [module/github]
 type = internal/github
@@ -197,6 +197,27 @@ label-muted-foreground = #666
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
+
+[module/powermenu]
+type = custom/menu
+
+; expand-right = true
+
+format-spacing = 1
+
+label-open = ⏻
+label-open-foreground = ${colors.primary}
+label-close = ⏻ cancel
+label-close-foreground = ${colors.primary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+; menu-0-0 = log out
+; menu-0-0-exec = logout
+menu-0-0 = reboot
+menu-0-0-exec = reboot
+menu-0-1 = power off
+menu-0-1-exec = poweroff
 
 [settings]
 screenchange-reload = true
