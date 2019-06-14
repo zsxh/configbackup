@@ -159,37 +159,15 @@ interval = 10
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
 ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
 ; If not, uses default sink
 sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 
-; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
-; Default: true
 use-ui-max = true
-
-; Interval for volume increase/decrease (in percent points)
-; Default: 5
 interval = 5
 
-i; Available tags:
-;   <label-volume> (default)
-;   <ramp-volume>
-;   <bar-volume>
 format-volume = <ramp-volume> <label-volume>
 
-; Available tags:
-;   <label-muted> (default)
-;   <ramp-volume>
-;   <bar-volume>
-;format-muted = <label-muted>
-
-; Available tokens:
-;   %percentage% (default)
-;label-volume = %percentage%%
-
-; Available tokens:
-;   %percentage% (default)
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
@@ -201,8 +179,6 @@ ramp-volume-2 = 🔊
 [module/powermenu]
 type = custom/menu
 
-; expand-right = true
-
 format-spacing = 1
 
 label-open = ⏻
@@ -212,8 +188,6 @@ label-close-foreground = ${colors.primary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-; menu-0-0 = log out
-; menu-0-0-exec = logout
 menu-0-0 = reboot
 menu-0-0-exec = reboot
 menu-0-1 = power off
