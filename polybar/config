@@ -24,14 +24,14 @@ line-size = 2
 padding = 1
 module-margin = 1
 
-font-0 = "Meslo LG S Regular for Powerline:size=10;1"
+font-0 = "Meslo LG S Regular for Powerline:size=11;1"
 font-1 = "Noto Sans Mono:size=10;1"
 font-2 = "Noto Sans Symbols:size=10;1"
 font-3 = "Noto Sans Symbols2:size=10;1"
 
-modules-left = control-center date ewmh xwindow
+modules-left = control-center ewmh xwindow
 modules-center =
-modules-right = github pulseaudio wireless-network cpu memory battery powermenu
+modules-right = date github pulseaudio wireless-network cpu memory battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -42,7 +42,7 @@ margin-top = 0
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:50:...%
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -112,15 +112,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %m/%d %A
-date-alt = %Y-%m-%d %A
+date = %m/%d
+date-alt = %Y/%m/%d
 
-time = %I:%M
-time-alt = %I:%M%p
+time = %I:%M %a
+time-alt = %I:%M%p %A
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #fba922
 
 label = %date% %time%
 
@@ -155,7 +155,7 @@ token = ${file:/home/zsxh/.config/github/notifications.token}
 empty-notifications = false
 format = %{A1:xdg-open https\://github.com/notifications:}<label>%{A}
 label = 📫
-label-underline = #0099ff
+label-underline = #0a6cf5
 interval = 10
 
 [module/pulseaudio]
