@@ -64,7 +64,8 @@ export TIME_STYLE=long-iso
 # TMUX
 # https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
 if which tmux >/dev/null 2>&1; then
-    if ! [ "$(basename "$(cat "/proc/$PPID/comm")")" = "emacs" ]; then
+    # if ! [ "$(basename "$(cat "/proc/$PPID/comm")")" = "emacs" ]; then
+    if [ "$(basename "$(cat "/proc/$PPID/comm")")" = "alacritty" ]; then
         # if no session is started, start a new session
         test -z ${TMUX} && (tmux attach || tmux new-session -c $PWD)
 
