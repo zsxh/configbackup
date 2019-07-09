@@ -6,6 +6,7 @@ export MAVEN_HOME=/usr/local/maven
 
 export PYENV_ROOT=$HOME/.pyenv
 export PYTHONUSERBASE=$HOME/.local
+export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # https://github.com/pyenv/pyenv/issues/688#issuecomment-245294312
 
 export NVM_DIR=$HOME/.nvm
 
