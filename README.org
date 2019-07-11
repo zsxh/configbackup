@@ -59,9 +59,9 @@
   #+end_src
 
 * Albert
-  Install [[https://github.com/albertlauncher/albert][Albert]]
+  Install [[https://github.com/albertlauncher/albert][Albert]] first, then install extensions
   #+begin_src sh
-    git clone https://github.com/albertlauncher/python.git "~/.local/share/albert/org.albert.extension.python/modules"
+    git clone https://github.com/albertlauncher/python.git ~/.local/share/albert/org.albert.extension.python/modules
   #+end_src
 
 * Python
