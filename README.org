@@ -21,21 +21,14 @@
     ln -s `pwd`/.tmux.conf ~/
   #+end_src
 
+* Firefox Layout
+  copy ./firefox/chrome directory into ~/.mozilla/firefox/${some-hash-code}.dev-edition-default/
+
 * Terminal
   Install =alacritty= fisrt
   #+begin_src sh
     ln -s `pwd`/alacritty.yml ~/.config/alacritty/
   #+end_src
-
-* Python
-  #+BEGIN_SRC sh
-    # flake8 忽略缩进警告，调整每行默认长度
-    # pycodestyle 忽略缩进警告，调整每行默认长度
-    ln -s `pwd`/python/pip/pip.conf ~/.pip/
-    ln -s `pwd`/python/.condarc ~/
-    ln -s `pwd`/python/flake8 ~/.config
-    ln -s `pwd`/python/pycodestyle ~/.config
-  #+END_SRC
 
 * Vim
   #+BEGIN_SRC sh
@@ -65,12 +58,26 @@
     ln -s `pwd`/polybar/polybar.desktop ~/.config/autostart
   #+end_src
 
+* Albert
+  Install [[https://github.com/albertlauncher/albert][Albert]]
+  #+begin_src sh
+    git clone https://github.com/albertlauncher/python.git "~/.local/share/albert/org.albert.extension.python/modules"
+  #+end_src
+
+* Python
+  #+BEGIN_SRC sh
+    # flake8 忽略缩进警告，调整每行默认长度
+    # pycodestyle 忽略缩进警告，调整每行默认长度
+    ln -s `pwd`/python/pip/pip.conf ~/.pip/
+    ln -s `pwd`/python/.condarc ~/
+    ln -s `pwd`/python/flake8 ~/.config
+    ln -s `pwd`/python/pycodestyle ~/.config
+  #+END_SRC
+
 * Rustfmt
   #+begin_src sh
     ln -s `pwd`/rustfmt ~/.config
   #+end_src
-* Firefox Layout
-  copy ./firefox/chrome directory into ~/.mozilla/firefox/${some-hash-code}.dev-edition-default/
 * Proxy (Optional)
 ** ss
 ** goproxy
@@ -81,4 +88,5 @@
     ~/.spacemacs
     ~/.emacs.d/private/myconfig
   #+END_QUOTE
+
 
