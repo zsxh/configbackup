@@ -1,5 +1,6 @@
 ! 将 Control_L 和 Super_L 互换，将 Alt_R 设置为 Esc
 ! 记得将 fcitx 设置里的 全局配置/额外的激活输入法快捷键 -- 禁用(outdated, 转ibus)
+! https://blog.csdn.net/lqk1985/article/details/5152115
 
 remove mod1 = Alt_R
 clear mod4
