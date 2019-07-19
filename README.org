@@ -14,7 +14,12 @@
 * Xmodmap 键位映射
   #+BEGIN_SRC sh
     ln -s `pwd`/.Xmodmap ~/
-  #+END_SRC sh
+  #+END_SRC
+
+  - Not Working
+    - [[https://www.reddit.com/r/archlinux/comments/abfuov/xmodmap_and_xkbset_settings_are_reset_to_default/][xmodmap and xkbset settings are reset to default after system goes to sleep/standby]]
+    - [[https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4][故障排除-从待机状态恢复后]]
+    - [[https://superuser.com/questions/393423/the-symbol-and-systemctl-and-vsftpd][The @ symbol and systemctl and vsftpd]]
 
 * Tmux
   #+begin_src sh
