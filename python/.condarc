@@ -5,6 +5,8 @@
 show_channel_urls: true
 ssl_verify: true
 channels:
+  - pytorch
+  - fastai
   - defaults
   - conda-forge
 channel_priority: strict

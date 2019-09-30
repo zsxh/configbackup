@@ -29,6 +29,10 @@ export XMODIFIERS=@im=ibus
 
 export TERM=xterm-256color
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
 # 放在最后防止环境变量改变引起其他问题
 # TODO: 放弃pyenv,拖慢zsh启动速度
 if command -v pyenv 1>/dev/null 2>&1; then

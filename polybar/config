@@ -32,7 +32,7 @@ font-3 = "Noto Sans Symbols2:size=10;1"
 modules-left = control-center ewmh xwindow
 modules-center =
 #modules-right = date github pulseaudio wired-network wireless-network cpu memory battery powermenu
-modules-right = date github pulseaudio wired-network wireless-network battery powermenu
+modules-right = date pulseaudio wired-network wireless-network battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -114,11 +114,13 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %m/%d
-date-alt = %Y/%m/%d
+; date = %m/%d
+; date-alt = %Y/%m/%d
+date = %Y/%m/%d
 
-time = %I:%M %a
-time-alt = %I:%M%p %A
+; time = %I:%M %a
+; time-alt = %I:%M%p %A
+time = %A %I:%M%p
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
