@@ -1,4 +1,7 @@
-*Update* <2019-06-15 星期六>
+#+STARTUP: showall
+#+PROPERTY: header-args :results silent
+
+*Update* <2019-10-02 星期三>
 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
@@ -21,18 +24,23 @@
     - [[https://wiki.archlinux.org/index.php/Deepin_Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4][故障排除-从待机状态恢复后]]
     - [[https://superuser.com/questions/393423/the-symbol-and-systemctl-and-vsftpd][The @ symbol and systemctl and vsftpd]]
 
-* Tmux
-  #+begin_src sh
-    ln -s `pwd`/.tmux.conf ~/
-  #+end_src
-
 * Firefox Layout
   copy ./firefox/chrome directory into ~/.mozilla/firefox/${some-hash-code}.dev-edition-default/
 
 * Terminal
+** Alacritty
   Install =alacritty= fisrt
   #+begin_src sh
-    ln -s `pwd`/alacritty.yml ~/.config/alacritty/
+    ln -s `pwd`/terminal/alacritty.yml ~/.config/alacritty/
+  #+end_src
+** Tmux
+  #+begin_src sh
+    ln -s `pwd`/terminal/.tmux.conf ~/
+  #+end_src
+** Truecolor and Italic support
+   https://github.com/syl20bnr/spacemacs/wiki/Terminal
+  #+begin_src sh
+    tic -x -o ~/.terminfo `pwd`/terminal/xterm-24bit.terminfo
   #+end_src
 
 * Vim
