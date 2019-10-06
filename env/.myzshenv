@@ -41,11 +41,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - --no-rehash)"
 fi
 
-# 造成zsh启动太慢了
-# if command -v pipenv 1>/dev/null 2>&1; then
-#   eval "$(pipenv --completion)"
-# fi
-
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
