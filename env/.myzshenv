@@ -87,3 +87,7 @@ if which tmux >/dev/null 2>&1; then
         # }
     fi
 fi
+
+# https://stackoverflow.com/questions/28491458/zsh-agnoster-theme-showing-machine-name
+# hiding user@hostname for agnoster.zsh-theme
+DEFAULT_USER="$(whoami)"
