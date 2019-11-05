@@ -1,10 +1,13 @@
+/* https://github.com/jonhoo/configs/blob/master/gui/.mozilla/firefox/dev-edition-default/chrome/userChrome.css */
 @-moz-document url(chrome://browser/content/browser.xhtml) {
 	/* tabs on bottom of window */
 	#navigator-toolbox { -moz-box-ordinal-group: 10; }
 	#titlebar { -moz-box-ordinal-group: 10; }
-	#urlbar-results { margin-top: -35vh !important; }
-	.urlbarView-body-inner { }
-	#urlbarView-results { }
+  .urlbarView {
+		top: unset !important;
+		bottom: 69px !important;
+		box-shadow: none !important;
+	}
 	.search-one-offs { display: none; }
 	.tab-background { border-top: none !important; }
 	#navigator-toolbox::after { border: none; }
