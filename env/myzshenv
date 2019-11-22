@@ -14,7 +14,7 @@ export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
 export JULIA_HOME=/usr/local/julia
-# export NODEJS_HOME=/usr/local/nodejs
+export NODEJS_HOME=/usr/local/nodejs
 export GO_HOME=/usr/local/go
 export RUST_HOME=$HOME/.cargo
 
