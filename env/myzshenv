@@ -58,6 +58,9 @@ alias node='unalias nvm; unalias node; unalias npm; nvm_load; node $@'
 alias npm='unalias nvm; unalias node; unalias npm; nvm_load; npm $@'
 alias nvm='unalias nvm; unalias node; unalias npm; nvm_load; nvm $@'
 
+# maven create project
+alias mg="mvn archetype:generate"
+
 # 触摸板双指水平滑动
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
 
