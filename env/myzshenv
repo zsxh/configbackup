@@ -3,6 +3,7 @@ export VISUAL='vim'
 
 export JAVA_HOME=/usr/local/jdk
 export MAVEN_HOME=/usr/local/maven
+export CLOJURE_TOOL=/usr/local/clojure
 
 export PYENV_ROOT=$HOME/.pyenv
 export PYTHONUSERBASE=$HOME/.local
@@ -21,7 +22,7 @@ export GO111MODULE=on
 export GOPROXY=https://mirrors.cloud.tencent.com/go/
 export RUST_HOME=$HOME/.cargo
 
-export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -39,7 +40,6 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
 # 放在最后防止环境变量改变引起其他问题
-# TODO: 放弃pyenv,拖慢zsh启动速度
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - --no-rehash)"
 fi

@@ -30,9 +30,10 @@ font-2 = "Noto Sans Symbols:size=10;1"
 font-3 = "Noto Sans Symbols2:size=10;1"
 
 modules-left = control-center ewmh xwindow
-modules-center =
-#modules-right = date github pulseaudio wired-network wireless-network cpu memory battery powermenu
-modules-right = date pulseaudio wired-network wireless-network battery powermenu
+; modules-center =
+modules-right = date pulseaudio wireless-network battery powermenu
+; modules-right = date github pulseaudio wired-network wireless-network cpu memory battery powermenu
+; modules-right = date pulseaudio wired-network wireless-network battery powermenu
 
 tray-position = right
 tray-padding = 2
