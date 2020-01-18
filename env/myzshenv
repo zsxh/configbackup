@@ -57,7 +57,8 @@ function load_nvm() {
 }
 
 # https://github.com/romkatv/zsh-defer#example
-if ! [ "$(basename "$(cat "/proc/$PPID/comm")")" = "emacs" ]; then
+# load_nvm immediately when parent process is emacs
+if ! [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
     zsh-defer load_nvm
 else
     load_nvm
