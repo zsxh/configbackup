@@ -1,0 +1,22 @@
+https://github.com/trojan-gfw/trojan
+https://github.com/Dreamacro/clash
+
+#+begin_src shell
+  # ip
+  wget -O ${clash-config-dir}/Country.mmdb https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb
+#+end_src
+
+#+begin_example
+
+
+---> http 1081 ---> clash (rule based) \
+                                        ---> socks5 1080 ---> trojan --->
+--------- SwitchyOmega Or ... -------- /
+
+
+#+end_example
+
+#+begin_src shell
+  export http_proxy="http://127.0.0.1:1080"
+  export https_proxy=$http_proxy
+#+end_src
