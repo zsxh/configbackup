@@ -44,6 +44,25 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - --no-rehash)"
 fi
 
+# vterm
+# https://github.com/akermu/emacs-libvterm
+function vterm_printf(){
+    if [ -n "$TMUX" ]; then
+        # tell tmux to pass the escape sequences through
+        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
+
 # Install zsh-async if it’s not present
 if [[ ! -a ~/.zsh-defer ]]; then
     git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
@@ -58,12 +77,15 @@ function load_nvm() {
 
 # https://github.com/romkatv/zsh-defer#example
 # load_nvm immediately when parent process is emacs
-# if ! [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
-#     zsh-defer load_nvm
-# else
-#     load_nvm
-# fi
-zsh-defer load_nvm
+if [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
+    if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+        zsh-defer load_nvm
+    else
+        load_nvm
+    fi
+else
+    zsh-defer load_nvm
+fi
 
 # maven create project
 alias mg="mvn archetype:generate"
