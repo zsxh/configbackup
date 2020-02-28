@@ -1,0 +1,21 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%{$(vterm_prompt_end)%}'
+
+# PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+
+# AGNOSTER_PROMPT_SEGMENTS+="vterm_prompt_end"

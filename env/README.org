@@ -5,6 +5,7 @@ Install =zsh=, =prezto= first, then
   #echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
   ln -sf `pwd`/zshenv ~/.zshenv
   ln -sf `pwd`/zprofile ~/.zprofile
+  ln -sf `pwd`/zshrc ~/.zshrc
 #+END_SRC
 
 
@@ -87,4 +88,3 @@ Authors
 [2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
 [3]: http://www.manpagez.com/man/1/msgs
 [4]: https://github.com/sorin-ionescu/prezto/issues
-
