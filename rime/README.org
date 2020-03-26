@@ -1,4 +1,22 @@
-~/.config/ibus/rime/build/
+~/.config/ibus/rime/
 
 How To Customization: https://github.com/rime/home/wiki/CustomizationGuide
 hotkey: "Ctrl+`" swtich between english and chinese
+
+#+begin_src shell
+  ln -nsf `pwd`/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
+  ln -nsf `pwd`/luna_pinyin.custom.yaml ~/.config/ibus/rime/luna_pinyin.custom.yaml
+#+end_src
+
+系统Ibus首选项
+
+常规 - 下一项输入法 - 添加快捷键 <Control>grave
+输入法 - 添加英文输入法
+
+
+下载搜狗词库
+https://github.com/15cm/rime-sogou-dictionaries
+文件 luna_pinyin.sogou.dict.yaml，放到目录 ~/.config/ibus/rime 下 然后在 ~/.config/ibus/rime/default.custom.yaml 文件中添加下面配置：
+#+begin_example
+translator/dictionary: luna_pinyin.sogou.dict.yaml
+#+end_example

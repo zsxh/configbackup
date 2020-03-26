@@ -21,8 +21,9 @@ export GOPATH=~/Code/workspace/go/gopath
 export GO111MODULE=on
 export GOPROXY=https://mirrors.cloud.tencent.com/go/
 export RUST_HOME=$HOME/.cargo
+export RUBY_HOME=$HOME/.gem/ruby/2.7.0
 
-export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:$RUBY_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8

@@ -35,7 +35,6 @@
 	#tabbrowser-tabs, .tab-stack { min-height: 28px !important; }
 	.tabbrowser-tab { font-size: 90%; }
 	.tab-content { padding: 0 5px; }
-	.tab-close-button .toolbarbutton-icon { width: 12px !important; height: 12px !important; }
-  #TabsToolbar[inFullscreen="true"] { display:none!important; }
+	.tab-close-button .toolbarbutton-icon { width: 12px !important; height: 12px !important; }  #TabsToolbar[inFullscreen="true"] { display:none!important; }
   #navigator-toolbox[inFullscreen="true"] { display:none!important; }
 }
