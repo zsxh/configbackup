@@ -26,7 +26,7 @@
 	}
 	#urlbar-results {
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: column;
 	}
 	.search-one-offs { display: none !important; }
 	.tab-background { border-top: none !important; }
