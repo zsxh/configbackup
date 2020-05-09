@@ -102,4 +102,7 @@
     ~/.emacs.d/private/myconfig
   #+END_QUOTE
 
-
+* 显卡
+https://github.com/vetzki/nvidia-prime-switch-lightdm
+https://github.com/zsxh/nvidia-prime-switch-lightdm
+https://github.com/Askannz/optimus-manager

@@ -96,6 +96,7 @@ fi
 alias mg="mvn archetype:generate"
 
 # 触摸板双指水平滑动
+# gsettings list-keys com.deepin.dde.touchpad
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
 
 # TLDR settings
@@ -136,3 +137,8 @@ DEFAULT_USER="$(whoami)"
 # https://blog.karssen.org/2016/03/02/fixing-emacs-tramp-mode-when-using-zsh/
 # https://www.emacswiki.org/emacs/TrampMode#toc8
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
+# export http_proxy="http://127.0.0.1:1081"
+# export https_proxy=$http_proxy
+# # https://docs.oracle.com/javase/7/docs/technotes/guides/net/proxies.html
+# export MAVEN_OPTS="-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
