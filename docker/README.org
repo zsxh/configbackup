@@ -1,3 +1,5 @@
+#+STARTUP: showall
+
 * Docker Hub 镜像加速
 对于使用 systemd 的系统，请在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）
 
@@ -12,7 +14,7 @@
 
 之后重新启动服务。
 
-#+begin_src sh
+#+begin_src shehll
   $ sudo systemctl daemon-reload
   $ sudo systemctl restart docker
 #+end_src

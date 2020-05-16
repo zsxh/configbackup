@@ -8,14 +8,14 @@
 
 * Env 环境变量
   Install =zsh=, =prezto= first, then
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     ln -s `pwd`/env/.myzshenv ~/
     ln -s `pwd`/env/.zpreztorc ~/
     echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
   #+END_SRC
 
 * Xmodmap 键位映射
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     ln -s `pwd`/.Xmodmap ~/
   #+END_SRC
 
@@ -30,77 +30,105 @@
 * Terminal
 ** Alacritty
   Install =alacritty= fisrt
-  #+begin_src sh
+  #+begin_src shell
     ln -s `pwd`/terminal/alacritty.yml ~/.config/alacritty/
   #+end_src
 ** Tmux
-  #+begin_src sh
+  #+begin_src shell
     ln -s `pwd`/terminal/.tmux.conf ~/
   #+end_src
 ** Truecolor and Italic support
    https://github.com/syl20bnr/spacemacs/wiki/Terminal
-  #+begin_src sh
+  #+begin_src shell
     tic -x -o ~/.terminfo `pwd`/terminal/xterm-24bit.terminfo
   #+end_src
 
 * Vim
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     ln -s `pwd`/.vimrc ~/
   #+END_SRC sh
 
 * Inputrc
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     ln -s `pwd`/.inputrc ~/
   #+END_SRC
 
 * Docker
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     sudo ln -s `pwd`/docker/override.conf /etc/systemd/system/docker.service.d/
   #+END_SRC
 
 * Rime
-  #+BEGIN_SRC sh
+  #+BEGIN_SRC shell
     ln -s `pwd`/rime/default.yaml ~/.config/ibus/rime/build/
     ln -s `pwd`/rime/luna_pinyin_simp.schema.yaml ~/.config/ibus/rime/build/
   #+END_SRC
 
 * Polybar
   https://github.com/polybar/polybar
-  #+begin_src sh
+  #+begin_src shell
     ln -s `pwd`/polybar ~/.config/
     ln -s `pwd`/polybar/polybar.desktop ~/.config/autostart
   #+end_src
 
 * Albert
   Install [[https://github.com/albertlauncher/albert][Albert]] first, then install extensions
-  #+begin_src sh
+  #+begin_src shell
     git clone https://github.com/albertlauncher/python.git ~/.local/share/albert/org.albert.extension.python/modules
   #+end_src
 
-* Python
-  #+BEGIN_SRC sh
+* BEGIN
+** dotfiles
+  #+begin_src shell
     # flake8 忽略缩进警告，调整每行默认长度
     # pycodestyle 忽略缩进警告，调整每行默认长度
     ln -s `pwd`/python/pip/pip.conf ~/.pip/
     ln -s `pwd`/python/.condarc ~/
     ln -s `pwd`/python/flake8 ~/.config
     ln -s `pwd`/python/pycodestyle ~/.config
-  #+END_SRC
+  #+end_src
+** pyenv
+    Install https://github.com/pyenv/pyenv
+    #+begin_src shell
+      pyenv install miniconda3-latest
+      pyenv global miniconda3-latest
+      # https://stackoverflow.com/questions/58044214/installing-anaconda-with-pyenv-unable-to-configure-virtual-environment
+      # disable init of env "base"
+      conda config --set auto_activate_base false
+      conda update --all
+      conda install python=version
+    #+end_src
+** virtual environment examples
+*** venv (deployment projects)
+    https://docs.python.org/3/tutorial/venv.html
+    #+begin_src shell
+      # dir path ./venv is for emacs lsp-python-ms server
+      python -m venv ./venv
+      source venv/bin/activate
+      deactivate
+      pip freeze > requirements.txt
+      pip install -f requirements.txt
+    #+end_src
+*** conda virtual environment (machine-learning researches)
+    https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#
+    #+begin_src shell
+      conda create --name(-n) machine-learning python=3.8
+      conda env export > environment.yml
+      conda env create -f environment.yml
+      conda activate machine-learning
+
+      # specifying a location for an environment
+      conda create --prefix ./envs jupyterlab
+      conda activate ./envs
+      conda deactivate
+    #+end_src
 
 * Rustfmt
-  #+begin_src sh
+  #+begin_src shell
     ln -s `pwd`/rustfmt ~/.config
   #+end_src
-* Proxy (Optional)
-** ss
-** goproxy
-   Install [[https://github.com/snail007/goproxy][goproxy]] first
 
-* Spacemacs(Drop)
-  #+BEGIN_QUOTE
-    ~/.spacemacs
-    ~/.emacs.d/private/myconfig
-  #+END_QUOTE
+* Proxy
 
 * 显卡
 https://github.com/vetzki/nvidia-prime-switch-lightdm
