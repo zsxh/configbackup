@@ -1,0 +1,4 @@
+
+#+begin_src shell
+  ln -sf `pwd`/eclipse-java-google-style.xml ~/.emacs.d/.cache/eclipse-java-google-style.xml
+#+end_src
