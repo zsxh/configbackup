@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=run-trojan-qt5
+GenericName=run-trojan-qt5
+Comment=run-trojan-qt5
+Exec=/home/zsxh/Code/workspace/proxy/run-trojan-qt5.sh
+Terminal=false
+Type=Application
+Categories=Network;
+StartupNotify=true

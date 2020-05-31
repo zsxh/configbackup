@@ -1,3 +1,9 @@
+
+* trojan qt5
+https://github.com/Trojan-Qt5/Trojan-Qt5
+
+* trojan cli & clash
+
 https://github.com/trojan-gfw/trojan
 https://github.com/Dreamacro/clash
 
