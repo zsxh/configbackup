@@ -200,14 +200,15 @@ menu-0-0-exec = reboot
 menu-0-1 = power off
 menu-0-1-exec = poweroff
 
-[module/control-center]
-type = custom/text
-content = "@ "
-; content-foreground = #9370DB
-; content-background = #9370DB
-content-underline = #9370DB
-; content-padding = 2
-click-left = dde-control-center -t
+; FIXME: freeze
+; [module/control-center]
+; type = custom/text
+; content = "@ "
+; ; content-foreground = #9370DB
+; ; content-background = #9370DB
+; content-underline = #9370DB
+; ; content-padding = 2
+; click-left = dde-control-center -t
 
 [settings]
 screenchange-reload = true

@@ -107,8 +107,10 @@ else
     zsh-defer load_nvm
 fi
 
-# maven create project
+# Alias
 alias mg="mvn archetype:generate"
+alias shttp="export HTTP_PROXY=http://127.0.0.1:1081; export HTTPS_PROXY=http://127.0.0.1:1081;"
+alias uhttp="unset HTTP_PROXY; unset HTTPS_PROXY;"
 
 # 触摸板双指水平滑动
 # gsettings list-keys com.deepin.dde.touchpad

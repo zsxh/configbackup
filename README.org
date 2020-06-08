@@ -134,3 +134,16 @@
 https://github.com/vetzki/nvidia-prime-switch-lightdm
 https://github.com/zsxh/nvidia-prime-switch-lightdm
 https://github.com/Askannz/optimus-manager
+
+* Tips
+** A stop job is running for session c2 of user ...
+   #+begin_src shell
+     sudo systemctl edit systemd-timesyncd.service
+   #+end_src
+
+   #+begin_example
+     [Service]
+     TimeoutStopSec=1s
+   #+end_example
+   save as "systemd-timesyncd.service.d/override.conf" file 
+   https://www.reddit.com/r/archlinux/comments/4bawf7/a_stop_job_is_running_for_session_c2_of_user/
