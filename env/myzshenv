@@ -113,7 +113,7 @@ alias mg="mvn archetype:generate"
 # libgit2 trailing slash problem & 也不能用大写 HTTP_PROXY, wget 识别不出来
 # https://github.com/JuliaLang/julia/issues/33111#issuecomment-541204556
 # https://github.com/libgit2/libgit2/issues/5255
-alias shttp="export http_proxy=http://127.0.0.1:1081/; export https_proxy=$http_proxy;"
+alias shttp="export http_proxy=http://127.0.0.1:1081/; export https_proxy=http://127.0.0.1:1081/;"
 alias uhttp="unset http_proxy; unset https_proxy;"
 
 # 触摸板双指水平滑动
