@@ -24,3 +24,5 @@
     whitespace = red reverse
 [gitlab "company108/gitlab/api/v4"]
 	user = chenboxiong
+[core]
+	quotepath = false
