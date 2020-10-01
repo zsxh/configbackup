@@ -5,7 +5,7 @@ hotkey: "Ctrl+`" swtich between english and chinese
 
 #+begin_src shell
   ln -nsf `pwd`/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
-  ln -nsf `pwd`/luna_pinyin.custom.yaml ~/.config/ibus/rime/luna_pinyin.custom.yaml
+  ln -nsf `pwd`/luna_pinyin_simp.custom.yaml ~/.config/ibus/rime/luna_pinyin.custom.yaml
 #+end_src
 
 系统Ibus首选项
@@ -20,3 +20,9 @@ https://github.com/15cm/rime-sogou-dictionaries
 #+begin_example
 translator/dictionary: luna_pinyin.sogou.dict.yaml
 #+end_example
+
+ibus-rime
+https://wiki.archlinux.org/index.php/IBus_(简体中文)
+注意： 但是，如果ibus尚未启动，先将那些"export"的代码复制到$HOME/.xprofile，并将这行代码加到该文件：“ibus-daemon -x -d”,再重新登录。
+
+FIXME: Emacs

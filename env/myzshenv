@@ -1,6 +1,10 @@
 export EDITOR='vim'
 export VISUAL='vim'
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
 export JAVA_HOME=/usr/local/jdk
 export MAVEN_HOME=/usr/local/maven
 export CLOJURE_TOOL=/usr/local/clojure
@@ -9,13 +13,12 @@ export PYENV_ROOT=$HOME/.pyenv
 export PYTHONUSERBASE=$HOME/.local
 export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # https://github.com/pyenv/pyenv/issues/688#issuecomment-245294312
 
-export NVM_DIR=$HOME/.nvm
 
 export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
 export JULIA_HOME=/usr/local/julia
-export NODEJS_HOME=/usr/local/nodejs
+export NVM_DIR=$HOME/.config/nvm
 export GO_HOME=/usr/local/go
 export GOPATH=$HOME/Code/workspace/go/gopath
 export GO111MODULE=auto
@@ -23,7 +26,7 @@ export GOPROXY=https://mirrors.cloud.tencent.com/go/
 export RUST_HOME=$HOME/.cargo
 export RUBY_HOME=$HOME/.gem/ruby/2.7.0
 
-export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$NODEJS_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:$RUBY_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
+export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:$RUBY_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -35,10 +38,6 @@ export XMODIFIERS=@im=ibus
 export TERM=xterm-24bit
 # SSH might break if your remote machine does not have the same setup, you can work around this with the following alias.
 alias ssh="TERM=xterm-256color ssh"
-
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
 
 # 放在最后防止环境变量改变引起其他问题
 if command -v pyenv 1>/dev/null 2>&1; then

@@ -9,14 +9,14 @@
 * Env 环境变量
   Install =zsh=, =prezto= first, then
   #+BEGIN_SRC shell
-    ln -s `pwd`/env/.myzshenv ~/
-    ln -s `pwd`/env/.zpreztorc ~/
+    ln -sf `pwd`/env/myzshenv ~/.myzshenv
+    ln -sf `pwd`/env/zpreztorc ~/.zpreztorc
     echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
   #+END_SRC
 
 * Xmodmap 键位映射
   #+BEGIN_SRC shell
-    ln -s `pwd`/.Xmodmap ~/
+    ln -sf `pwd`/.Xmodmap ~/
   #+END_SRC
 
   - Not Working
@@ -25,17 +25,18 @@
     - [[https://superuser.com/questions/393423/the-symbol-and-systemctl-and-vsftpd][The @ symbol and systemctl and vsftpd]]
 
 * Firefox Layout
+  set the pref ~toolkit.legacyUserProfileCustomizations.stylesheets~ to =true= in ~about:config~
   copy ./firefox/chrome directory into ~/.mozilla/firefox/${some-hash-code}.dev-edition-default/
 
 * Terminal
 ** Alacritty
   Install =alacritty= fisrt
   #+begin_src shell
-    ln -s `pwd`/terminal/alacritty.yml ~/.config/alacritty/
+    ln -sf `pwd`/terminal/alacritty.yml ~/.config/alacritty/
   #+end_src
 ** Tmux
   #+begin_src shell
-    ln -s `pwd`/terminal/.tmux.conf ~/
+    ln -sf `pwd`/terminal/.tmux.conf ~/
   #+end_src
 ** Truecolor and Italic support
    https://github.com/syl20bnr/spacemacs/wiki/Terminal
@@ -45,48 +46,37 @@
 
 * Vim
   #+BEGIN_SRC shell
-    ln -s `pwd`/.vimrc ~/
+    ln -sf `pwd`/.vimrc ~/
   #+END_SRC sh
 
 * Inputrc
   #+BEGIN_SRC shell
-    ln -s `pwd`/.inputrc ~/
+    ln -sf `pwd`/.inputrc ~/
   #+END_SRC
 
-* Docker
+* Docker(FIXME)
   #+BEGIN_SRC shell
-    sudo ln -s `pwd`/docker/override.conf /etc/systemd/system/docker.service.d/
+    sudo ln -sf `pwd`/docker/override.conf /etc/systemd/system/docker.service.d/
   #+END_SRC
 
 * Rime
-  #+BEGIN_SRC shell
-    ln -s `pwd`/rime/default.yaml ~/.config/ibus/rime/build/
-    ln -s `pwd`/rime/luna_pinyin_simp.schema.yaml ~/.config/ibus/rime/build/
-  #+END_SRC
+  file:rime/README.org
 
 * Polybar
+  install ~xorg-xrandr~
   https://github.com/polybar/polybar
   #+begin_src shell
-    ln -s `pwd`/polybar ~/.config/
-    ln -s `pwd`/polybar/polybar.desktop ~/.config/autostart
+    ln -sf `pwd`/polybar ~/.config/
+    ln -sf `pwd`/polybar/polybar.desktop ~/.config/autostart
   #+end_src
 
 * Albert
-  Install [[https://github.com/albertlauncher/albert][Albert]] first, then install extensions
+  Install [[https://github.com/albertlauncher/albert][Albert]] first, then install extensions, Pressing the =spacebar= on it activated extensions.
   #+begin_src shell
-    git clone https://github.com/albertlauncher/python.git ~/.local/share/albert/org.albert.extension.python/modules
+    git clone --depth=1 https://github.com/albertlauncher/python.git ~/.local/share/albert/org.albert.extension.python/modules
   #+end_src
 
 * BEGIN
-** dotfiles
-  #+begin_src shell
-    # flake8 忽略缩进警告，调整每行默认长度
-    # pycodestyle 忽略缩进警告，调整每行默认长度
-    ln -s `pwd`/python/pip/pip.conf ~/.pip/
-    ln -s `pwd`/python/.condarc ~/
-    ln -s `pwd`/python/flake8 ~/.config
-    ln -s `pwd`/python/pycodestyle ~/.config
-  #+end_src
 ** pyenv
     Install https://github.com/pyenv/pyenv
     #+begin_src shell
@@ -98,6 +88,15 @@
       conda update --all
       conda install python=version
     #+end_src
+** dotfiles
+  #+begin_src shell
+    # flake8 忽略缩进警告，调整每行默认长度
+    # pycodestyle 忽略缩进警告，调整每行默认长度
+    ln -sf `pwd`/python/pip/pip.conf ~/.pip/
+    ln -sf `pwd`/python/.condarc ~/
+    ln -sf `pwd`/python/flake8 ~/.config
+    ln -sf `pwd`/python/pycodestyle ~/.config
+  #+end_src
 ** virtual environment examples
 *** venv (deployment projects)
     https://docs.python.org/3/tutorial/venv.html
@@ -125,7 +124,14 @@
 
 * Rustfmt
   #+begin_src shell
-    ln -s `pwd`/rustfmt ~/.config
+    ln -nsf `pwd`/rust/rustfmt ~/.config/
+    ln -sf `pwd`/rust/config ~/.cargo/
+  #+end_src
+
+* NodeJs
+  Install ~nvm~
+  #+begin_src shell
+    npm config set registry https://registry.npm.taobao.org
   #+end_src
 
 * Proxy
@@ -145,5 +151,5 @@ https://github.com/Askannz/optimus-manager
      [Service]
      TimeoutStopSec=1s
    #+end_example
-   save as "systemd-timesyncd.service.d/override.conf" file 
+   save as "systemd-timesyncd.service.d/override.conf" file
    https://www.reddit.com/r/archlinux/comments/4bawf7/a_stop_job_is_running_for_session_c2_of_user/
