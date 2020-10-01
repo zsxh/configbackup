@@ -54,10 +54,17 @@
     ln -sf `pwd`/.inputrc ~/
   #+END_SRC
 
-* Docker(FIXME)
+* Podman, Skopeo, Buildah, Podman Compose
+  #+begin_src shell
+    mkdir -p ~/.config/containers
+    ln -sf `pwd`/container/registries.conf ~/.config/containers/registries.conf
+  #+end_src
+
+* Docker(Drop)
   #+BEGIN_SRC shell
-    sudo ln -sf `pwd`/docker/override.conf /etc/systemd/system/docker.service.d/
+    sudo ln -sf `pwd`/container/override.conf /etc/systemd/system/docker.service.d/
   #+END_SRC
+
 
 * Rime
   file:rime/README.org
