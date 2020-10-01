@@ -148,6 +148,26 @@ https://github.com/vetzki/nvidia-prime-switch-lightdm
 https://github.com/zsxh/nvidia-prime-switch-lightdm
 https://github.com/Askannz/optimus-manager
 
+* Bluetooth
+
+  install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl)=
+
+  #+begin_src example
+  $ bluetoothctl
+  > power on
+  > ...
+  > scan on
+  > ..
+  > pair 28:...
+  > ...
+  > connect 28:...
+  #+end_src
+
+  Pairing works, but connecting does not
+
+  ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
+  that may be due to the =pulseaudio-bluetooth= package not being installed.
+
 * Tips
 ** A stop job is running for session c2 of user ...
    #+begin_src shell
