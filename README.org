@@ -1,7 +1,7 @@
 #+STARTUP: showall
 #+PROPERTY: header-args :results silent
 
-*Update* <2019-10-02 星期三>
+*Update* <2020-10-02>
 
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
