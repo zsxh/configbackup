@@ -144,9 +144,20 @@
 * Proxy
 
 * 显卡
-https://github.com/vetzki/nvidia-prime-switch-lightdm
-https://github.com/zsxh/nvidia-prime-switch-lightdm
-https://github.com/Askannz/optimus-manager
+
+  https://github.com/vetzki/nvidia-prime-switch-lightdm
+  https://github.com/zsxh/nvidia-prime-switch-lightdm
+  https://github.com/Askannz/optimus-manager
+
+* Emacs, ibus-rime 中文输入法
+
+  https://coldnew.github.io/576cfa12/
+  http://liyanrui.is-programmer.com/posts/13324.html
+  https://yangyingchao.github.io/emacs/2014/11/17/emacs-ibus.html
+  ~pacman -S xorg-font-util~
+  #+begin_src shell
+    ln -sf `pwd`/.xprofile ~/.xprofile
+  #+end_src
 
 * Bluetooth
 
@@ -169,12 +180,6 @@ https://github.com/Askannz/optimus-manager
 
   ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
   that may be due to the =pulseaudio-bluetooth= package not being installed.
-
-* Emacs, ibus-rime
-  ~pacman -S xorg-font-util~
-  #+begin_src shell
-    ln -sf `pwd`/.xprofile ~/.xprofile
-  #+end_src
 
 * Tips
 ** A stop job is running for session c2 of user ...
