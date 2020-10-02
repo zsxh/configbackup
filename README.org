@@ -170,6 +170,12 @@ https://github.com/Askannz/optimus-manager
   ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
   that may be due to the =pulseaudio-bluetooth= package not being installed.
 
+* Emacs, ibus-rime
+  ~pacman -S xorg-font-util~
+  #+begin_src shell
+    ln -sf `pwd`/.xprofile ~/.xprofile
+  #+end_src
+
 * Tips
 ** A stop job is running for session c2 of user ...
    #+begin_src shell
