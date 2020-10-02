@@ -145,9 +145,24 @@
 
 * 显卡
 
-  https://github.com/vetzki/nvidia-prime-switch-lightdm
-  https://github.com/zsxh/nvidia-prime-switch-lightdm
+  驱动: video-hybrid-intel-nvidia-{number}xx-prime
+
   https://github.com/Askannz/optimus-manager
+
+  #+begin_src shell
+    cp `pwd`/optimus-manager/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+  #+end_src
+
+  jounalctl 看见 acpi 错误导致触摸板加载失败，
+  修改 /etc/default/grub  防止 acpi 错误
+
+  #+BEGIN_SRC conf
+    GRUB_CMDLINE_LINUX_DEFAULT="splash quiet udev.log_priority=3 acpi_osi=! acpi_osi='Windows 2009'"
+  #+END_SRC
+
+  =sudo update-grub=
+
+  https://wiki.archlinux.org/index.php/PRIME
 
 * Emacs, ibus-rime 中文输入法
 
@@ -180,6 +195,12 @@
 
   ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
   that may be due to the =pulseaudio-bluetooth= package not being installed.
+
+* Xbox One Controller wireless
+
+  https://wiki.archlinux.org/index.php/Gamepad#Xbox_Wireless_Controller_/_Xbox_One_Wireless_Controller
+
+  要想 disable ertm 生效，之前需要先把之前的连接配置删掉(bluetoothctl -> remove ...)
 
 * Tips
 ** A stop job is running for session c2 of user ...
