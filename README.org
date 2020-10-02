@@ -191,7 +191,7 @@
 
   Pairing works, but connecting does not
 
-  https://wiki.archlinux.org/index.php/Bluetooth_headset#A2DP_sink_profile_is_unavailable
+  https://wiki.archlinux.org/index.php/Bluetooth_headset#Pairing_works,_but_connecting_does_not
 
   ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
   that may be due to the =pulseaudio-bluetooth= package not being installed.
