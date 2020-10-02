@@ -24,5 +24,3 @@ translator/dictionary: luna_pinyin.sogou.dict.yaml
 ibus-rime
 https://wiki.archlinux.org/index.php/IBus_(简体中文)
 注意： 但是，如果ibus尚未启动，先将那些"export"的代码复制到$HOME/.xprofile，并将这行代码加到该文件：“ibus-daemon -x -d”,再重新登录。
-
-FIXME: Emacs
