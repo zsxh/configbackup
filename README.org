@@ -28,6 +28,8 @@
   set the pref ~toolkit.legacyUserProfileCustomizations.stylesheets~ to =true= in ~about:config~
   copy ./firefox/chrome directory into ~/.mozilla/firefox/${some-hash-code}.dev-edition-default/
 
+  kwin 去除标题栏，安装 systemsettings，窗口控制
+
 * Terminal
 ** Alacritty
   Install =alacritty= fisrt
@@ -56,6 +58,11 @@
 
 * Podman, Skopeo, Buildah, Podman Compose
   #+begin_src shell
+    # rootless mode
+    sudo touch /etc/subuid /etc/subgid
+    sudo usermod --add-subuids 200000-201000 --add-subgids 200000-201000 `whoami`
+    podman system migrate
+    # mirrors
     mkdir -p ~/.config/containers
     ln -sf `pwd`/container/registries.conf ~/.config/containers/registries.conf
   #+end_src
