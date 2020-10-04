@@ -34,6 +34,7 @@
 ** Alacritty
   Install =alacritty= fisrt
   #+begin_src shell
+    mkdir -p ~/.config/alacritty
     ln -sf `pwd`/terminal/alacritty.yml ~/.config/alacritty/
   #+end_src
 ** Tmux
