@@ -220,7 +220,14 @@
      [Service]
      TimeoutStopSec=1s
    #+end_example
+
    save as "systemd-timesyncd.service.d/override.conf" file
+
    https://www.reddit.com/r/archlinux/comments/4bawf7/a_stop_job_is_running_for_session_c2_of_user/
+
 ** Emacs 在 Kwin 下切换应用时 模糊/分辨率低
+
+   https://www.reddit.com/r/kde/comments/g3pr44/emacs_icon_in_thumnail_view_task_switcher_is/fnulmgd?utm_source=share&utm_medium=web2x&context=3
+
    Right click the title bar, more, special application settings, appearance and fixes, app desktop launcher name, force, name of launcher file without extension.
+
