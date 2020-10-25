@@ -232,3 +232,13 @@
    Right click the title bar, more, special application settings, appearance and fixes, app desktop launcher name, force, name of launcher file without extension.
 
    wine 微信同样的方法可以解决
+
+* XPS15 9570
+
+  https://wiki.archlinux.org/index.php/Dell_XPS_15_9570 archlinux 的文档真是个宝藏
+
+** BIOS 固件升级
+
+   https://wiki.archlinux.org/index.php/Dell_XPS_15_9570#EFI_firmware_updates
+
+   固件升级到 1.15.0，风扇噪音问题得到明显改善，1.16.0及以上版本，cpu Undervolting(手动降频)有些问题，暂时没必要更新
