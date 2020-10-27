@@ -66,9 +66,21 @@
     # mirrors
     mkdir -p ~/.config/containers
     ln -sf `pwd`/container/registries.conf ~/.config/containers/registries.conf
+    sudo ln -sf `pwd`/container/registries.conf /etc/containers/registries.conf
   #+end_src
 
-* Docker(Drop)
+  podman-compose 要安装 devel 分支版本的 ~yay -S podman-compose-git~，release 版好久没更新了
+
+  podman rootless 资源限制权限问题:
+  - https://stackoverflow.com/questions/62105953/podman-memlock-limits : ulimits
+
+  +~/.config/containers/storage.conf, /etc/containers/storage.conf 的 =addtionalimagesstores= 设置为 =/var/lib/mycontainers=+
+
+  +~sudo chmod -R a+rx /var/lib/mycontainers~+
+
+  需要资源限制的就用 root 用户模式，用 addtionalimagesstores 感觉有点绕
+
+* Docker(已废弃)
   #+BEGIN_SRC shell
     sudo ln -sf `pwd`/container/override.conf /etc/systemd/system/docker.service.d/
   #+END_SRC
@@ -242,3 +254,6 @@
    https://wiki.archlinux.org/index.php/Dell_XPS_15_9570#EFI_firmware_updates
 
    固件升级到 1.15.0，风扇噪音问题得到明显改善，1.16.0及以上版本，cpu Undervolting(手动降频)有些问题，暂时没必要更新
+
+** yay aur 安装出现 python 依赖问题
+   ~pyenv global system~ pyenv 修改了 python PATH，aur 上的依赖就找不到，编译时先将 python 路径设回系统默认
