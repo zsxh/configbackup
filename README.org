@@ -158,7 +158,10 @@
 * NodeJs
   Install ~nvm~
   #+begin_src shell
+    # npm get registry
     npm config set registry https://registry.npm.taobao.org
+    # yarn config get registry
+    yarn config set registry https://registry.npm.taobao.org/
   #+end_src
 
 * Proxy
@@ -196,7 +199,7 @@
 
 * Bluetooth
 
-  install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl)=
+  install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl), pulseaudio-modules-bt=
 
   #+begin_src example
   $ bluetoothctl
@@ -257,3 +260,10 @@
 
 ** yay aur 安装出现 python 依赖问题
    ~pyenv global system~ pyenv 修改了 python PATH，aur 上的依赖就找不到，编译时先将 python 路径设回系统默认
+
+* 亮度
+
+  #+begin_src bash
+    # xrandr | grep -v disconnected | grep connected
+    xrandr --output eDP-1-1 --brightness 0.5
+  #+end_src
