@@ -199,31 +199,32 @@
 
 * Bluetooth
 
-  install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl), pulseaudio-modules-bt=
+** 一般情况
+   install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl), pulseaudio-modules-bt=
 
-  #+begin_src example
-  $ bluetoothctl
-  > power on
-  > ...
-  > scan on
-  > ..
-  > pair 28:...
-  > ...
-  > connect 28:...
-  #+end_src
+   #+begin_src example
+   $ bluetoothctl
+   > power on
+   > ...
+   > scan on
+   > ..
+   > pair 28:...
+   > ...
+   > connect 28:...
+   #+end_src
 
-  Pairing works, but connecting does not
+   Pairing works, but connecting does not
 
-  https://wiki.archlinux.org/index.php/Bluetooth_headset#Pairing_works,_but_connecting_does_not
+   https://wiki.archlinux.org/index.php/Bluetooth_headset#Pairing_works,_but_connecting_does_not
 
-  ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
-  that may be due to the =pulseaudio-bluetooth= package not being installed.
+   ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
+   that may be due to the =pulseaudio-bluetooth= package not being installed.
 
-* Xbox One Controller wireless
+** Xbox One Controller wireless
 
-  https://wiki.archlinux.org/index.php/Gamepad#Xbox_Wireless_Controller_/_Xbox_One_Wireless_Controller
+   https://wiki.archlinux.org/index.php/Gamepad#Xbox_Wireless_Controller_/_Xbox_One_Wireless_Controller
 
-  要想 disable ertm 生效，之前需要先把之前的连接配置删掉(bluetoothctl -> remove ...)
+   要想 disable ertm 生效，之前需要先把之前的连接配置删掉(bluetoothctl -> remove ...)
 
 * Tips
 ** A stop job is running for session c2 of user ...
