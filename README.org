@@ -168,7 +168,7 @@
 
 * 显卡
 
-  驱动: video-hybrid-intel-nvidia-{number}xx-prime
+  驱动: nvidia-{NUM}-utils, linux{num}-nvidia-{NUM}xx
 
   https://github.com/Askannz/optimus-manager
 
@@ -200,7 +200,7 @@
 * Bluetooth
 
 ** 一般情况
-   install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl), pulseaudio-modules-bt=
+   install =pulseaudio-bluetooth, bluez-utils(providing the bluetoothctl)=
 
    #+begin_src example
    $ bluetoothctl
