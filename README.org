@@ -255,6 +255,9 @@
    wine 微信同样的方法可以解决
 
 ** Downgrade
+
+   https://forum.manjaro.org/t/repair-station-workarounds-to-get-almost-stable-again-after-serious-breaking-updates/40172/2
+
    manjaro deppin bug 超多，升级后如果发现系统不正常了，可以考虑一下将一些包降级处理
    ~sudo pacman -S downgrade~
    比如: deepin-kwin 5.2.0.3 导致窗口无法移动
