@@ -14,6 +14,11 @@
     echo "source \"${HOME}/.myzshenv\"" >> ~/.zshenv
   #+END_SRC
 
+  pyenv 注意事项，~​/.pyenv/shims 有时候会 break $PATH 的脚本，比如 "pyenv: envsubst/gettext... command not found"
+  试下 ~pyenv rehash~
+  https://github.com/pyenv/pyenv/issues/1112
+  https://github.com/pyenv/pyenv/issues/688
+
 * Xmodmap 键位映射
   #+BEGIN_SRC shell
     ln -sf `pwd`/.Xmodmap ~/
@@ -248,6 +253,12 @@
    Right click the title bar, more, special application settings, appearance and fixes, app desktop launcher name, force, name of launcher file without extension.
 
    wine 微信同样的方法可以解决
+
+** Downgrade
+   manjaro deppin bug 超多，升级后如果发现系统不正常了，可以考虑一下将一些包降级处理
+   ~sudo pacman -S downgrade~
+   比如: deepin-kwin 5.2.0.3 导致窗口无法移动
+   ~sudo downgrade deepin-kwin~ 选择之前没问题的版本 5.2.0.2
 
 * XPS15 9570
 
