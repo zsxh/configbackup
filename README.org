@@ -263,6 +263,17 @@
    比如: deepin-kwin 5.2.0.3 导致窗口无法移动
    ~sudo downgrade deepin-kwin~ 选择之前没问题的版本 5.2.0.2
 
+** Installing dig & nslookup on ArchLinux
+   ~sudo pacman -S bind~
+
+** git 中文路径编码
+
+   ~git config --global core.quotepath false~
+
+   core.quotepath设为false的话，就不会对0×80以上的字符进行quote
+
+   https://git-scm.com/docs/git-config#git-config-corequotePath
+
 * XPS15 9570
 
   https://wiki.archlinux.org/index.php/Dell_XPS_15_9570 archlinux 的文档真是个宝藏

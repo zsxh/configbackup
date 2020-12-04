@@ -11,8 +11,7 @@ export CLOJURE_TOOL=/usr/local/clojure
 
 export PYENV_ROOT=$HOME/.pyenv
 export PYTHONUSERBASE=$HOME/.local
-export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # https://github.com/pyenv/pyenv/issues/688#issuecomment-245294312
-
+# export GIT_INTERNAL_GETTEXT_TEST_FALLBACKS=1 # https://github.com/pyenv/pyenv/issues/688#issuecomment-245294312
 
 export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64

@@ -1,0 +1,7 @@
+* mirrors
+
+  #+begin_src shell
+    ln -sf `pwd`/profiles.clj ~/.lein/profiles.clj
+  #+end_src
+
+  #+RESULTS:
