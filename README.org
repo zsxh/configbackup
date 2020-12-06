@@ -173,7 +173,7 @@
 
 * 显卡
 
-  驱动: nvidia-{NUM}-utils, linux{num}-nvidia-{NUM}xx
+  驱动: nvidia-{NUM}-utils, linux{num}-nvidia-{NUM}xx, lib32-nvidia-{NUM}xx-utils
 
   https://github.com/Askannz/optimus-manager
 
