@@ -1,0 +1,7 @@
+* TODO clj
+
++ https://clojure.org/guides/getting_started#_installation_on_linux
++ 参考配置 https://github.com/practicalli/clojure-deps-edn
++ 参考配置 https://github.com/seancorfield/dot-clojure
+
+* lein (deprecated)

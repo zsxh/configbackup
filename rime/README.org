@@ -24,3 +24,10 @@ translator/dictionary: luna_pinyin.sogou.dict.yaml
 ibus-rime
 https://wiki.archlinux.org/index.php/IBus_(简体中文)
 注意： 但是，如果ibus尚未启动，先将那些"export"的代码复制到$HOME/.xprofile，并将这行代码加到该文件：“ibus-daemon -x -d”,再重新登录。
+
+Emacs + ibus-rime 中文输入法
+
+从 ~pacman~ 上安装 =ibus-rime=，按照需求把 =GTK_IM_MODULE, XMODIFIERS, QT_IM_MODULE= 环境变量配好后，
+在所有 GTK, QT 的应用上输入法正常工作，唯独在 =Emacs= 无法工作，一度我以为是 =Emacs= 环境变量没获取到的问题。
+经过许久的搜寻，终于在这篇博客 [[https://coldnew.github.io/576cfa12/][修正 emacs 在X11下不能使用中文輸入法的問題]] 看到了相似的问题，缺了 =X11= =font-util=
+依赖，~pacman -S xorg-font-util~ 解决。

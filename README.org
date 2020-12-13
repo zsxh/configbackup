@@ -173,7 +173,12 @@
 
 * 显卡
 
-  驱动: nvidia-{NUM}-utils, linux{num}-nvidia-{NUM}xx, lib32-nvidia-{NUM}xx-utils
+  驱动: linux-latest, linux{num}-nvidia, nvidia-utils, lib32-nvidia-utils
+
+  linux-lastest 依赖 linux{num}，上面都是一个打的包，依赖没问题
+
+  手动指定驱动版本: linux{num}, linux{num}-nvidia-{NUM}xx, nvidia-{NUM}-utils, lib32-nvidia-{NUM}xx-utils
+
 
   https://github.com/Askannz/optimus-manager
 
@@ -293,3 +298,24 @@
     # xrandr | grep -v disconnected | grep connected
     xrandr --output eDP-1-1 --brightness 0.5
   #+end_src
+
+* battery & performance
+
+https://github.com/georgewhewell/undervolt
+
+https://github.com/AdnanHodzic/auto-cpufreq ~sudo pacman -S auto-cuprfreq~
+
+
+* Steam Proton
+
+proton 5.13 issue
+
+https://github.com/ValveSoftware/Proton/issues/4289#issuecomment-727329572
+
+~sudo pacman -S vulkan-tools~
+
+#+begin_src shell
+  vulkaninfo |grep deviceName
+#+end_src
+
+启动命令: DXVK_FILTER_DEVICE_NAME="YOUR GPU DEVICENAME" %command%

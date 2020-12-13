@@ -3,7 +3,7 @@ patch:
   #   switch_key:
   #     Shift_L: noop
   #     Shift_R: noop
-  menu/page_size: 7
+  menu/page_size: 9
   switcher/hotkeys:
     - F4
   # key_binder/bindings:
