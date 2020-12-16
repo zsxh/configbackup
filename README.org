@@ -161,6 +161,18 @@
   #+end_src
 
 * NodeJs
+
+** fnm
+
+https://github.com/Schniz/fnm
+
+#+begin_src shell
+  curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.config/fnm"
+  mkdir ~/.config/fnm/zfunc
+  fnm completions --shell=zsh > ~/.config/fnm/zfunc/_fnm
+#+end_src
+
+** nvm (废弃)
   Install ~nvm~
   #+begin_src shell
     # npm get registry

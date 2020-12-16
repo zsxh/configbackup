@@ -17,7 +17,8 @@ export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
 export JULIA_HOME=/usr/local/julia
-export NVM_DIR=$HOME/.config/nvm
+export FNM_DIR=$HOME/.config/fnm
+# export NVM_DIR=$HOME/.config/nvm
 export GO_HOME=/usr/local/go
 export GOPATH=$HOME/Code/workspace/go/gopath
 export GO111MODULE=auto
@@ -25,7 +26,7 @@ export GOPROXY=https://mirrors.cloud.tencent.com/go/
 export RUST_HOME=$HOME/.cargo
 export RUBY_HOME=$HOME/.gem/ruby/2.7.0
 
-export PATH=$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:$RUBY_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
+export PATH=$FNM_DIR:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$CLOJURE_TOOL:$RUBY_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -92,22 +93,26 @@ fi
 source ~/.zsh-defer/zsh-defer.plugin.zsh
 
 # Node Version Manager
-function load_nvm() {
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-}
+# https://github.com/Schniz/fnm/issues/171#issuecomment-721696818
+eval "$(fnm env)"
+fpath+=$HOME/.config/fnm/zfunc
+
+# function load_nvm() {
+#     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#     [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+# }
 
 # https://github.com/romkatv/zsh-defer#example
 # load_nvm immediately when parent process is emacs
-if [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
-    if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-        zsh-defer load_nvm
-    else
-        load_nvm
-    fi
-else
-    zsh-defer load_nvm
-fi
+# if [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
+#     if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+#         zsh-defer load_nvm
+#     else
+#         load_nvm
+#     fi
+# else
+#     zsh-defer load_nvm
+# fi
 
 # Alias
 alias mg="mvn archetype:generate"
