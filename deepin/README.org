@@ -1,3 +1,13 @@
+
+* Gesture
+
 #+begin_src shell
   ln -nsf `pwd`/gesture.json ~/.config/deepin/dde-daemon/gesture.json
 #+end_src
+
+* Issues
+
+
+- deepin-kwin
+- deepin-file-manager
+- startdde
