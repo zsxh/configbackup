@@ -311,6 +311,8 @@ https://github.com/Schniz/fnm
     xrandr --output eDP-1-1 --brightness 0.5
   #+end_src
 
+* 字体
+https://szclsya.me/zh-cn/posts/fonts/linux-config-guide/
 * battery & performance
 
 https://github.com/georgewhewell/undervolt

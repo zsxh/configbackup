@@ -1,4 +1,26 @@
+* eclipse java google style format
 
 #+begin_src shell
   ln -sf `pwd`/eclipse-java-google-style.xml ~/.emacs.d/.cache/eclipse-java-google-style.xml
+#+end_src
+
+* jenv
+
+https://github.com/jenv/jenv
+
+#+begin_src shell
+  git clone https://github.com/jenv/jenv.git ~/.jenv
+  # Shell: bash
+  echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+  echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+  # Shell: zsh
+  echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+  echo 'eval "$(jenv init -)"' >> ~/.zshrc
+  # add java version
+  jenv add JDK_PATH
+  # config global version
+  jenv global JDK_VERSION
+  # java home enable
+  jenv enable-plugin export
+  exec $SHELL -l
 #+end_src
