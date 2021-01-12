@@ -24,3 +24,9 @@ https://github.com/jenv/jenv
   jenv enable-plugin export
   exec $SHELL -l
 #+end_src
+
+* jmc
+
+download jmc
+
+~export JMC=/usr/local/jdk-mission-control~
