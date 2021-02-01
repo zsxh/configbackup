@@ -124,7 +124,7 @@
   #+begin_src shell
     # flake8 忽略缩进警告，调整每行默认长度
     # pycodestyle 忽略缩进警告，调整每行默认长度
-    ln -sf `pwd`/python/pip/pip.conf ~/.pip/
+    ln -sf `pwd`/python/.pip ~/.pip
     ln -sf `pwd`/python/.condarc ~/
     ln -sf `pwd`/python/flake8 ~/.config
     ln -sf `pwd`/python/pycodestyle ~/.config
@@ -185,12 +185,16 @@ https://github.com/Schniz/fnm
 
 * 显卡
 
-  驱动: linux-latest, linux{num}-nvidia, nvidia-utils, lib32-nvidia-utils
+  自动最新驱动: linux-latest, linux-latest-nvidia, linux{num}-nvidia, nvidia-utils, lib32-nvidia-utils
 
-  linux-lastest 依赖 linux{num}，上面都是一个打的包，依赖没问题
+  linux-lastest 依赖 linux{num}
+  linux-latest-nvidia 依赖 linux{num}-nvidia
+  上面都是同一个人打的包，依赖没问题，升级的时候得看 nvidia 的版本是否都升上去了
 
-  手动指定驱动版本: linux{num}, linux{num}-nvidia-{NUM}xx, nvidia-{NUM}-utils, lib32-nvidia-{NUM}xx-utils
+  手动指定驱动版本，可以自由选择内核，nvidia驱动更新较慢，升级时小心处理冲突(比如有个别人打包的新版的nvidia-utils...)
+  linux{num}, linux{num}-nvidia-{NUM}xx, nvidia-{NUM}-utils, lib32-nvidia-{NUM}xx-utils
 
+  ps: pacman IgnorePkg 好像无法完全杜绝冲突的情况
 
   https://github.com/Askannz/optimus-manager
 
