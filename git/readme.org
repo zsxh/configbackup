@@ -1,4 +1,12 @@
+* config
+
 #+begin_src shell
   ln -sf `pwd`/.gitconfig ~/.gitconfig
 #+end_src
 
+* git-info
+
+#+begin_src shell
+  cd ~/.config
+  git clone --depth=1 https://github.com/gitbits/git-info.git
+#+end_src
