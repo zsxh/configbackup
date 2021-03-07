@@ -246,6 +246,18 @@ https://github.com/Schniz/fnm
    ~journalctl -xe~, you might see ~bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protocol not available~,
    that may be due to the =pulseaudio-bluetooth= package not being installed.
 
+# TODO: bluetooth microphone
+https://wiki.archlinux.org/index.php/Bluetooth_headset#HFP_not_working_with_PulseAudio
+
+PulseAudio does not detect my bluetooth headset microphone.
+I see no mention of microphone in the Bluetooth wiki nor the Bluetooth Headset wiki.
+https://bbs.archlinux.org/viewtopic.php?pid=1921917#p1921917/
+https://bbs.archlinux.org/viewtopic.php?id=209979
+
+Refused to switch profile to headset_head_unit: Not connected
+https://bbs.archlinux.org/viewtopic.php?id=251719
+https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-unit
+
 ** Xbox One Controller wireless
 
    https://wiki.archlinux.org/index.php/Gamepad#Xbox_Wireless_Controller_/_Xbox_One_Wireless_Controller

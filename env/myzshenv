@@ -43,8 +43,8 @@ export TERM=xterm-24bit
 # SSH might break if your remote machine does not have the same setup, you can work around this with the following alias.
 alias ssh="TERM=xterm-256color ssh"
 
-alias docker="podman"
-alias docker-compose="podman-compose"
+# alias docker="podman"
+# alias docker-compose="podman-compose"
 
 # 放在最后防止环境变量改变引起其他问题
 if command -v pyenv 1>/dev/null 2>&1; then
