@@ -1,0 +1,9 @@
+* ranger
+
+* ripgrep
+
+* fd
+
+* tldr
+
+* htop, nmon

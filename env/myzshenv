@@ -31,6 +31,11 @@ export GIT_INFO_HOME=$HOME/.config/git-info
 
 export PATH=$FNM_DIR:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
+# guix, https://guix.gnu.org/manual/zh-cn/html_node/Er-Jin-Zhi-WenJian-An-Zhuang-.html
+export GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=zh_CN.UTF-8
@@ -175,3 +180,11 @@ DEFAULT_USER="$(whoami)"
 # export https_proxy=$http_proxy
 # # https://docs.oracle.com/javase/7/docs/technotes/guides/net/proxies.html
 # export MAVEN_OPTS="-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
+
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# fzf-history-widget-accept() {
+#   fzf-history-widget
+#   zle accept-line
+# }
+# zle     -N     fzf-history-widget-accept
+# bindkey '^X^R' fzf-history-widget-accept

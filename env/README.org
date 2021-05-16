@@ -8,6 +8,9 @@ Install =zsh=, =prezto= first, then
   ln -sf `pwd`/zshrc ~/.zshrc
 #+END_SRC
 
+#+begin_src shell
+  sudo pacman -S fzf
+#+end_src
 
 Configuration Files
 ===================
