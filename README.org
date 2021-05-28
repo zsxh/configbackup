@@ -363,4 +363,3 @@ https://github.com/ValveSoftware/Proton/issues/4289#issuecomment-727329572
 
 https://archived.forum.manjaro.org/t/weak-wifi-signal-intel-wireless-3165/84579
 https://archived.forum.manjaro.org/t/qca9377-network-manager-idle-disconnect-issue/142151
-
