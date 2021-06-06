@@ -35,7 +35,6 @@ export PATH=$FNM_DIR:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_H
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
-
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=zh_CN.UTF-8
@@ -50,6 +49,17 @@ alias ssh="TERM=xterm-256color ssh"
 
 # alias docker="podman"
 # alias docker-compose="podman-compose"
+
+# Install zsh-async if it’s not present
+if [[ ! -a ~/.zsh-defer ]]; then
+    git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
+fi
+source ~/.zsh-defer/zsh-defer.plugin.zsh
+
+# Alias
+alias mg="mvn archetype:generate"
+# jenv 新初始化，防止 graalvm js/python 环境变量出问题
+eval "$(jenv init -)"
 
 # 放在最后防止环境变量改变引起其他问题
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -71,61 +81,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# vterm
-# https://github.com/akermu/emacs-libvterm
-function vterm_printf(){
-    if [ -n "$TMUX" ]; then
-        # tell tmux to pass the escape sequences through
-        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-    elif [ "${TERM%%-*}" = "screen" ]; then
-        # GNU screen (screen, screen-256color, screen-256color-bce)
-        printf "\eP\e]%s\007\e\\" "$1"
-    else
-        printf "\e]%s\e\\" "$1"
-    fi
-}
-
-vterm_prompt_end() {
-    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
-}
-
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
-fi
-
-# Install zsh-async if it’s not present
-if [[ ! -a ~/.zsh-defer ]]; then
-    git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
-fi
-source ~/.zsh-defer/zsh-defer.plugin.zsh
-
 # Node Version Manager
 # https://github.com/Schniz/fnm/issues/171#issuecomment-721696818
 eval "$(fnm env)"
 fpath+=$HOME/.config/fnm/zfunc
-
-# function load_nvm() {
-#     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-#     [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-# }
-
-# https://github.com/romkatv/zsh-defer#example
-# load_nvm immediately when parent process is emacs
-# if [[ "$(basename "$(cat "/proc/$PPID/comm")")" == emacs* ]]; then
-#     if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-#         zsh-defer load_nvm
-#     else
-#         load_nvm
-#     fi
-# else
-#     zsh-defer load_nvm
-# fi
-
-# Alias
-alias mg="mvn archetype:generate"
-# jenv
-eval "$(jenv init -)"
 
 # libgit2 trailing slash problem & 也不能用大写 HTTP_PROXY, wget 识别不出来
 # https://github.com/JuliaLang/julia/issues/33111#issuecomment-541204556
@@ -188,3 +147,26 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # }
 # zle     -N     fzf-history-widget-accept
 # bindkey '^X^R' fzf-history-widget-accept
+
+# vterm
+# https://github.com/akermu/emacs-libvterm
+function vterm_printf(){
+    if [ -n "$TMUX" ]; then
+        # tell tmux to pass the escape sequences through
+        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+}
+
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
