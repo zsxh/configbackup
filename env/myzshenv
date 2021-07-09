@@ -150,10 +150,9 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # vterm
 # https://github.com/akermu/emacs-libvterm
-function vterm_printf(){
-    if [ -n "$TMUX" ]; then
-        # tell tmux to pass the escape sequences through
-        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+vterm_printf(){
+    if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
+        # Tell tmux to pass the escape sequences through
         printf "\ePtmux;\e\e]%s\007\e\\" "$1"
     elif [ "${TERM%%-*}" = "screen" ]; then
         # GNU screen (screen, screen-256color, screen-256color-bce)
@@ -166,6 +165,8 @@ function vterm_printf(){
 vterm_prompt_end() {
     vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
 }
+setopt PROMPT_SUBST
+PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
 
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
