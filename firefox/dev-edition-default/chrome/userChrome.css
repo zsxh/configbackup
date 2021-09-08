@@ -1,13 +1,10 @@
 /* https://github.com/jonhoo/configs/blob/master/gui/.mozilla/firefox/chrome/userChrome.css */
 @-moz-document url(chrome://browser/content/browser.xhtml) {
 	/* tabs on bottom of window */
-	/*
-	  we want to move #navigator-toolbox, but since FF72, it is wrapped in
-	  a `box` element that has no identifier. we would like to use:
-	    box:has(#navigator-toolbox) { -moz-box-ordinal-group: 10; }
-	  but :has isn't a "live selector", so we can't use it in stylesheet
-	  context. instead, we use this hack:
-	*/
+	/* requires that you set
+	 * toolkit.legacyUserProfileCustomizations.stylesheets = true
+	 * in about:config
+	 */
 	#mainPopupSet ~ box { -moz-box-ordinal-group: 10; }
 	#titlebar { -moz-box-ordinal-group: 10; }
 	#urlbar {
@@ -36,6 +33,6 @@
 	.tabbrowser-tab { font-size: 90%; }
 	.tab-content { padding: 0 5px; }
 	.tab-close-button .toolbarbutton-icon { width: 12px !important; height: 12px !important; }
-  #TabsToolbar[inFullscreen="true"] { display:none!important; }
-  #navigator-toolbox[inFullscreen="true"] { display:none!important; }
+  #toolbox[inFullscreen="true"] { display:none !important; }
+  #TabsToolbar[inFullscreen="true"] { display:none !important; }
 }
