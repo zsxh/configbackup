@@ -92,7 +92,13 @@ https://help.aliyun.com/document_detail/60750.html
 
   +~sudo chmod -R a+rx /var/lib/mycontainers~+
 
-  需要资源限制的就用 root 用户模式，用 addtionalimagesstores 感觉有点绕
+  - 需要资源限制的就用 root 用户模式，用 addtionalimagesstores 感觉有点绕
+  - rootless 限制 cpu 使用
+    系统默认，用户没有 cpu cgroup controller，可以手动添加(rootless下会有性能损失)
+    https://github.com/containers/podman/blob/main/troubleshooting.md#26-running-containers-with-cpu-limits-fails-with-a-permissions-error
+    https://github.com/containers/podman/issues/7959 (问题讨论)
+    https://wiki.archlinux.org/title/cgroups
+    ~podman run --rm --cpus 1 alpine echo hello~
 
 * Docker(已废弃)
   #+BEGIN_SRC shell
