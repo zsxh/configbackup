@@ -171,3 +171,6 @@ PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
 fi
+
+# emacs lsp-mode use plist
+export LSP_USE_PLISTS=t

@@ -279,7 +279,7 @@ https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-
 
    要想 disable ertm 生效，之前需要先把之前的连接配置删掉(bluetoothctl -> remove ...)
 
-* Tips
+* FAQ
 ** A stop job is running for session c2 of user ...
    #+begin_src shell
      sudo systemctl edit systemd-timesyncd.service
@@ -321,6 +321,13 @@ https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-
    core.quotepath设为false的话，就不会对0×80以上的字符进行quote
 
    https://git-scm.com/docs/git-config#git-config-corequotePath
+
+** kwin 崩了
+
+https://archived.forum.manjaro.org/t/cant-move-windows-no-window-borders/90779
+Can’t move windows. No window borders. can't use alt-tab. can't even move it.
+
+~kwin-x11 2>&1 1>/dev/null &~
 
 * XPS15 9570
 
