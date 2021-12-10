@@ -1,4 +1,8 @@
 
+* qv2ray gui
+
+v2ray + qv2ray + qv2ray plugin trojan, trojan-go
+
 * trojan qt5
 https://github.com/Trojan-Qt5/Trojan-Qt5
 

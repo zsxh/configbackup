@@ -329,6 +329,8 @@ Can’t move windows. No window borders. can't use alt-tab. can't even move it.
 
 ~kwin-x11 2>&1 1>/dev/null &~
 
+~deepin-wm --replace &~
+
 * XPS15 9570
 
   https://wiki.archlinux.org/index.php/Dell_XPS_15_9570 archlinux 的文档真是个宝藏
