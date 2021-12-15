@@ -92,6 +92,8 @@ fpath+=$HOME/.config/fnm/zfunc
 alias shttp="export http_proxy=http://127.0.0.1:1081/; export https_proxy=http://127.0.0.1:1081/;"
 alias uhttp="unset http_proxy; unset https_proxy;"
 
+alias tldr='proxychains tldr'
+
 # 触摸板双指水平滑动
 # gsettings list-keys com.deepin.dde.touchpad
 eval "$(gsettings set com.deepin.dde.touchpad horiz-scroll-enabled true)"
