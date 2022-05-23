@@ -27,3 +27,5 @@ typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%{$(vterm_prompt_end)%}'
 # PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
 
 # AGNOSTER_PROMPT_SEGMENTS+="vterm_prompt_end"
+
+alias e='emacsclient -a "" -c -n "$@"'

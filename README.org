@@ -1,8 +1,6 @@
 #+STARTUP: showall
 #+PROPERTY: header-args :results silent
 
-*Update* <2020-10-02>
-
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
 
@@ -330,6 +328,13 @@ Can’t move windows. No window borders. can't use alt-tab. can't even move it.
 ~kwin-x11 2>&1 1>/dev/null &~
 
 ~deepin-wm --replace &~
+
+dde 下找到 kwin shortcuts 配置文件 file:~/.config/kglobalshortcutsrc
+
+kde 快捷键配置文件。。。
+https://forum.kde.org/viewtopic.php?t=151477
+
+
 
 * XPS15 9570
 

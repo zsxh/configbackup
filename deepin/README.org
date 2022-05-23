@@ -11,3 +11,7 @@
 - deepin-kwin
 - deepin-file-manager
 - startdde
+
+* kwin
+
+~/.config/autostart
