@@ -1,0 +1,7 @@
+* TODO shell for macos and linux
+
+zsh from sratch
+https://thevaluable.dev/zsh-install-configure-mouseless/
+
+How to configure .zshrc for specfic os
+https://unix.stackexchange.com/questions/252166/how-to-configure-zshrc-for-specfic-os
