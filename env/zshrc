@@ -29,3 +29,7 @@ typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%{$(vterm_prompt_end)%}'
 # AGNOSTER_PROMPT_SEGMENTS+="vterm_prompt_end"
 
 alias e='emacsclient -a "" -c -n "$@"'
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.3.3/gems/vagrant-2.3.3/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)

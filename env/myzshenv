@@ -22,13 +22,15 @@ export JULIA_HOME=/usr/local/julia
 export FNM_DIR=$HOME/.config/fnm
 # export NVM_DIR=$HOME/.config/nvm
 export GO_HOME=/usr/local/go
-export GOPATH=$HOME/Code/workspace/go/gopath
-export GO111MODULE=auto
-export GOPROXY=https://mirrors.cloud.tencent.com/go/
+export GOPATH=$HOME/Code/workspace/go
+export GO111MODULE=on
+export GOPROXY=https://proxy.golang.com.cn,direct
 export RUST_HOME=$HOME/.cargo
 export RUBY_HOME=$HOME/.gem/ruby/2.7.0
 export GIT_INFO_HOME=$HOME/.config/git-info
 export LSP_SERVER=$HOME/.emacs.d/cache/language-server/bin
+
+export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 export PATH=$FNM_DIR:$LSP_SERVER:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
@@ -44,7 +46,7 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
-export TERM=xterm-24bit
+# export TERM=xterm-24bit
 # SSH might break if your remote machine does not have the same setup, you can work around this with the following alias.
 alias ssh="TERM=xterm-256color ssh"
 
