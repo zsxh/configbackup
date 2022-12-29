@@ -1,28 +1,19 @@
 [user]
 	name = zsxh
 	email = bnbvbchen@gmail.com
-[github]
-	user = zsxh
-[color]
-  ui = true
-# https://github.com/dandavison/delta
-# [core]
-#   pager = delta --plus-color="#012800" --minus-color="#340001"
-# [interactive]
-#   diffFilter = delta --color-only
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    meta = yellow
-    frag = magenta bold
-    commit = yellow bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
-[gitlab "company108/gitlab/api/v4"]
-	user = chenboxiong
 [core]
 	quotepath = false
+#   pager = delta
+# [interactive]
+#   diffFilter = delta --color-only
+# [delta]
+# 	navigate = true  # use n and N to move between diff sections
+# [merge]
+#   conflictstyle = diff3
+[diff]
+	colorMoved = default
+
+[https "https://github.com"]
+  proxy = socks5h://127.0.0.1:1080
+[http "https://github.com"]
+  proxy = socks5h://127.0.0.1:1080
