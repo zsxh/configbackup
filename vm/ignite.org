@@ -1,0 +1,19 @@
+
+* Ignite
+
+https://github.com/weaveworks/ignite
+
+/usr/lib/systemd/system/ignited.service
+
+#+begin_src conf
+[Unit]
+Description=ignited
+After=network.target containerd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ignited daemon
+
+[Install]
+WantedBy=multi-user.target
+#+end_src

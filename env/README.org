@@ -1,3 +1,4 @@
+* zsh
 Install =zsh=, =prezto= first, then
 #+BEGIN_SRC shell
   ln -sf `pwd`/myzshenv ~/.myzshenv
@@ -91,3 +92,9 @@ Authors
 [2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
 [3]: http://www.manpagez.com/man/1/msgs
 [4]: https://github.com/sorin-ionescu/prezto/issues
+
+* Gow in windows
+
+The lightweight alternative to Cygwin
+
+https://github.com/bmatzelle/gow

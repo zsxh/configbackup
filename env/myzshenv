@@ -28,9 +28,10 @@ export GOPROXY=https://proxy.golang.com.cn,direct
 export RUST_HOME=$HOME/.cargo
 export RUBY_HOME=$HOME/.gem/ruby/2.7.0
 export GIT_INFO_HOME=$HOME/.config/git-info
-export LSP_SERVER=$HOME/.emacs.d/cache/language-server/bin
+export LSP_SERVER=$HOME/.emacs.d/cache/lsp-servers/bin
 
 export VAGRANT_DEFAULT_PROVIDER=libvirt
+# export VAGRANT_HOST_KEY_CHECKING=False
 
 export PATH=$FNM_DIR:$LSP_SERVER:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
@@ -155,24 +156,24 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # vterm
 # https://github.com/akermu/emacs-libvterm
-vterm_printf(){
-    if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
-        # Tell tmux to pass the escape sequences through
-        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-    elif [ "${TERM%%-*}" = "screen" ]; then
-        # GNU screen (screen, screen-256color, screen-256color-bce)
-        printf "\eP\e]%s\007\e\\" "$1"
-    else
-        printf "\e]%s\e\\" "$1"
-    fi
-}
+# vterm_printf(){
+#     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
+#         # Tell tmux to pass the escape sequences through
+#         printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+#     elif [ "${TERM%%-*}" = "screen" ]; then
+#         # GNU screen (screen, screen-256color, screen-256color-bce)
+#         printf "\eP\e]%s\007\e\\" "$1"
+#     else
+#         printf "\e]%s\e\\" "$1"
+#     fi
+# }
 
-vterm_prompt_end() {
-    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
-}
-setopt PROMPT_SUBST
-PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+# vterm_prompt_end() {
+#     vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+# }
+# setopt PROMPT_SUBST
+# PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
 
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
-fi
+# if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+#     alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+# fi
