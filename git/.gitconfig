@@ -13,15 +13,9 @@
 [diff]
 	colorMoved = default
 
-[https "https://github.com"]
-  proxy = socks5h://127.0.0.1:1080
 [http "https://github.com"]
   proxy = socks5h://127.0.0.1:1080
-[https "https://codeberg.org"]
-  proxy = socks5h://127.0.0.1:1080
 [http "https://codeberg.org"]
-  proxy = socks5h://127.0.0.1:1080
-[https "https://gitlab.com"]
   proxy = socks5h://127.0.0.1:1080
 [http "https://gitlab.com"]
   proxy = socks5h://127.0.0.1:1080
