@@ -37,7 +37,7 @@ Emacs + ibus-rime 中文输入法
 经过许久的搜寻，终于在这篇博客 [[https://coldnew.github.io/576cfa12/][修正 emacs 在X11下不能使用中文輸入法的問題]] 看到了相似的问题，缺了 =X11= =font-util=
 依赖，~pacman -S xorg-font-util~ 解决。
 
-* 雾凇拼音 rime-ice
+* TODO 雾凇拼音 rime-ice
 
 Rime 配置：雾凇拼音 | 长期维护的简体词库
 
