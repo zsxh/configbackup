@@ -55,10 +55,10 @@ alias ssh="TERM=xterm-256color ssh"
 # alias docker-compose="podman-compose"
 
 # Install zsh-async if it’s not present
-if [[ ! -a ~/.zsh-defer ]]; then
-    git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
-fi
-source ~/.zsh-defer/zsh-defer.plugin.zsh
+# if [[ ! -a ~/.zsh-defer ]]; then
+#     git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
+# fi
+# source ~/.zsh-defer/zsh-defer.plugin.zsh
 
 # Alias
 alias mg="mvn archetype:generate"
@@ -69,21 +69,6 @@ eval "$(jenv init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - --no-rehash)"
 fi
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/zsxh/.pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/zsxh/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
-        . "/home/zsxh/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/zsxh/.pyenv/versions/miniconda3-latest/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Node Version Manager
 # https://github.com/Schniz/fnm/issues/171#issuecomment-721696818
