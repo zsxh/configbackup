@@ -35,10 +35,6 @@ export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 export PATH=$FNM_DIR:$LSP_SERVER:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
-# guix, https://guix.gnu.org/manual/zh-cn/html_node/Er-Jin-Zhi-WenJian-An-Zhuang-.html
-export GUIX_PROFILE="$HOME/.guix-profile"
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=zh_CN.UTF-8
@@ -50,9 +46,6 @@ export XMODIFIERS=@im=ibus
 # export TERM=xterm-24bit
 # SSH might break if your remote machine does not have the same setup, you can work around this with the following alias.
 alias ssh="TERM=xterm-256color ssh"
-
-# alias docker="podman"
-# alias docker-compose="podman-compose"
 
 # Install zsh-async if it’s not present
 # if [[ ! -a ~/.zsh-defer ]]; then
