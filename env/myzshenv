@@ -18,7 +18,6 @@ export PYTHONUSERBASE=$HOME/.local
 export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=/usr/lib/openssl-1.0:$CUDA_PATH/lib64:$CUDA_PATH/extras/CUPTI/lib64
 
-export JULIA_HOME=/usr/local/julia
 export FNM_DIR=$HOME/.config/fnm
 # export NVM_DIR=$HOME/.config/nvm
 export GO_HOME=/usr/local/go
@@ -33,7 +32,7 @@ export LSP_SERVER=$HOME/.emacs.d/cache/lsp-servers/bin
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 # export VAGRANT_HOST_KEY_CHECKING=False
 
-export PATH=$FNM_DIR:$LSP_SERVER:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$JULIA_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
+export PATH=$FNM_DIR:$LSP_SERVER:$PYENV_ROOT/bin:$PYTHONUSERBASE/bin:$RUST_HOME/bin:$GO_HOME/bin:$GOPATH/bin:$JENV_ROOT/bin:$MAVEN_HOME/bin:$JMC:$CLOJURE_TOOL:$RUBY_HOME/bin:$GIT_INFO_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$CUDA_PATH:$CUDA_PATH/bin:$LD_LIBRARY_PATH
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -56,11 +55,29 @@ alias ssh="TERM=xterm-256color ssh"
 # Alias
 alias mg="mvn archetype:generate"
 # jenv 新初始化，防止 graalvm js/python 环境变量出问题
-eval "$(jenv init -)"
+# eval "$(jenv init -)"
+# Lazy load jenv
+if type jenv > /dev/null; then
+    export PATH="${JENV_ROOT}/shims:${PATH}"
+    function jenv() {
+        unset -f jenv
+        eval "$(command jenv init -)"
+        jenv $@
+    }
+fi
 
 # 放在最后防止环境变量改变引起其他问题
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init - --no-rehash)"
+# fi
+# Lazy load pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init - --no-rehash)"
+    export PATH="${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init - --no-rehash)"
+        pyenv $@
+    }
 fi
 
 # Node Version Manager
@@ -155,3 +172,5 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
 #     alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
 # fi
+
+# zmodload zsh/zprof # zprof profile
