@@ -1,8 +1,20 @@
-* Ibus Rime
+* fcitx5-rime
+
+~sudo pacman -S fcitx5-rime fcitx5-gtk fcitx5-qt fcitx5-configtool~
+
+https://wiki.archlinux.org/title/Fcitx5
+https://wiki.archlinux.org/title/Rime
+
+* TODO 雾凇拼音 rime-ice
+
+Rime 配置：雾凇拼音 | 长期维护的简体词库
+
+https://github.com/iDvel/rime-ice
+* DROP Ibus Rime
 ~/.config/ibus/rime/
 
 How To Customization: https://github.com/rime/home/wiki/CustomizationGuide
-hotkey: "Ctrl+`" swtich between english and chinese
+hotkey: "Ctrl+`" swtih between english and chinese
 
 #+begin_src shell
   ln -nsf `pwd`/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
@@ -37,8 +49,3 @@ Emacs + ibus-rime 中文输入法
 经过许久的搜寻，终于在这篇博客 [[https://coldnew.github.io/576cfa12/][修正 emacs 在X11下不能使用中文輸入法的問題]] 看到了相似的问题，缺了 =X11= =font-util=
 依赖，~pacman -S xorg-font-util~ 解决。
 
-* TODO 雾凇拼音 rime-ice
-
-Rime 配置：雾凇拼音 | 长期维护的简体词库
-
-https://github.com/iDvel/rime-ice

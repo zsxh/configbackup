@@ -219,7 +219,8 @@ https://github.com/Schniz/fnm
   修改 /etc/default/grub  防止 acpi 错误
 
   #+BEGIN_SRC conf
-    GRUB_CMDLINE_LINUX_DEFAULT="splash quiet udev.log_priority=3 acpi_osi=! acpi_osi='Windows 2009'"
+    #GRUB_CMDLINE_LINUX_DEFAULT="splash quiet udev.log_priority=3 acpi_osi=! acpi_osi='Windows 2009'"
+    GRUB_CMDLINE_LINUX_DEFAULT="splash quiet intel_iommu=on udev.log_priority=3"
   #+END_SRC
 
   =sudo update-grub=
