@@ -1,9 +1,12 @@
 * fcitx5-rime
 
 ~sudo pacman -S fcitx5-rime fcitx5-gtk fcitx5-qt fcitx5-configtool~
+~mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart~
 
 https://wiki.archlinux.org/title/Fcitx5
 https://wiki.archlinux.org/title/Rime
+https://fcitx-im.org/wiki/Setup_Fcitx_5#XDG_Autostart
+
 
 * TODO 雾凇拼音 rime-ice
 
