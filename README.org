@@ -4,7 +4,7 @@
 * Emacs
 [[https://github.com/zsxh/emacs.d][My Emacs Config]]
 
-* Env 环境变量
+* DROP Env 环境变量
   Install =zsh=, =prezto= first, then
   #+BEGIN_SRC shell
     ln -sf `pwd`/env/myzshenv ~/.myzshenv
@@ -17,7 +17,7 @@
   https://github.com/pyenv/pyenv/issues/1112
   https://github.com/pyenv/pyenv/issues/688
 
-* Xmodmap 键位映射
+* DROP Xmodmap 键位映射
   #+BEGIN_SRC shell
     ln -sf `pwd`/.Xmodmap ~/
   #+END_SRC
@@ -60,7 +60,7 @@
     ln -sf `pwd`/.inputrc ~/
   #+END_SRC
 
-* Podman, Skopeo, Buildah, Podman Compose
+* DROP Podman, Skopeo, Buildah, Podman Compose
 
 阿里云 https://cr.console.aliyun.com/undefined/instances/mirrors 镜像加速器管理页
 
@@ -98,7 +98,7 @@ https://help.aliyun.com/document_detail/60750.html
     https://wiki.archlinux.org/title/cgroups
     ~podman run --rm --cpus 1 alpine echo hello~
 
-* Docker(已废弃)
+* DROP Docker
   #+BEGIN_SRC shell
     sudo ln -sf `pwd`/container/override.conf /etc/systemd/system/docker.service.d/
   #+END_SRC
@@ -185,7 +185,7 @@ https://github.com/Schniz/fnm
   fnm completions --shell=zsh > ~/.config/fnm/zfunc/_fnm
 #+end_src
 
-** nvm (废弃)
+** DROP nvm
   Install ~nvm~
   #+begin_src shell
     # npm get registry
