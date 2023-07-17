@@ -17,6 +17,10 @@
   https://github.com/pyenv/pyenv/issues/1112
   https://github.com/pyenv/pyenv/issues/688
 
+* 键位映射
+
+[[file:keyboard-remap/readme.org]]
+
 * DROP Xmodmap 键位映射
   #+BEGIN_SRC shell
     ln -sf `pwd`/.Xmodmap ~/
@@ -175,7 +179,10 @@ https://help.aliyun.com/document_detail/60750.html
 
 * NodeJs
 
-** fnm
+** pnpm
+
+
+** DROP fnm
 
 https://github.com/Schniz/fnm
 
